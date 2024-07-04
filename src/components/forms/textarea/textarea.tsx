@@ -1,4 +1,4 @@
-import { CustomTextAreProps } from "@$@D/types/input";
+import { CustomTextAreProps } from "@/types/input";
 import { Textarea } from "@mantine/core";
 import { Controller } from "react-hook-form";
 

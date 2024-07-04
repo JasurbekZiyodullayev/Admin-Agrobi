@@ -1,6 +1,6 @@
 import { Controller } from "react-hook-form";
 import { Select as MantineSelect, type SelectProps } from "@mantine/core";
-import { IControl } from "@$@D/types/control";
+import { IControl } from "@/types/control";
 
 type ISelect = SelectProps & IControl;
 

@@ -1,4 +1,4 @@
-import { CustomInputPhoneProps } from "@$@D/types/input";
+import { CustomInputPhoneProps } from "@/types/input";
 import { Input, InputLabel } from "@mantine/core";
 import { Controller } from "react-hook-form";
 import { IMaskInput } from "react-imask";

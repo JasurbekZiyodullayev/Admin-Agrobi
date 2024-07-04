@@ -1,4 +1,4 @@
-import { CustomYearInputProps } from "@$@D/types/input";
+import { CustomYearInputProps } from "@/types/input";
 import { YearPickerInput } from "@mantine/dates";
 import { Controller } from "react-hook-form";
 

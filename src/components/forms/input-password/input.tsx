@@ -1,6 +1,6 @@
 import { Controller } from "react-hook-form";
 import { PasswordInput } from "@mantine/core";
-import { CustomIPasswordnputProps } from "@$@D/types/input";
+import { CustomIPasswordnputProps } from "@/types/input";
 
 export const InputPassword = ({
   control,

@@ -1,4 +1,4 @@
-import { CustomSwitchProps } from "@$@D/types/input";
+import { CustomSwitchProps } from "@/types/input";
 import { Switch } from "@mantine/core";
 import { Controller } from "react-hook-form";
 

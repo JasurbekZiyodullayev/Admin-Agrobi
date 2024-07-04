@@ -1,4 +1,4 @@
-import { CustomInputProps } from "@$@D/types/input";
+import { CustomInputProps } from "@/types/input";
 import { TextInput } from "@mantine/core";
 import { Controller } from "react-hook-form";
 
