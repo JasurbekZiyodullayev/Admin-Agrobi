@@ -4,7 +4,6 @@ import { ISidebar } from "@/types/layout";
 import { Link, useLocation } from "react-router-dom";
 export default function Item({ icon, path = "#", text }: ISidebar) {
   const location = useLocation();
-  console.log(location, "location");
 
   return (
     <>
