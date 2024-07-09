@@ -15,7 +15,7 @@ export default function TableComponent({
   }, [tableRef]);
 
   return (
-    <div className="scroll-element">
+    <div style={{ width: "100%" }} className="scroll-element">
       <div
         className="table-inner"
         style={{ maxWidth: maxWidth ? "calc(100vw - 350px)" : "" }}
@@ -23,7 +23,7 @@ export default function TableComponent({
         <Table
           ref={tableRef}
           withColumnBorders
-          borderColor="transparent"
+          borderColor="#EEF0FA"
           // borderColor={"var(--tb-color)"}
           verticalSpacing="sm"
           horizontalSpacing="sm"
@@ -39,7 +39,7 @@ export default function TableComponent({
               fontSize: "0.875rem",
               fontWeight: "600",
             },
-            tbody: { backgroundColor: "var(--paper-bg)" },
+            tbody: { backgroundColor: "transparent" },
             td: {
               color: "var(--grey-600)",
               fontSize: "0.875rem",
