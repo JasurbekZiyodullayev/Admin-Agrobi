@@ -1,15 +1,13 @@
 import styles from "./navbar.module.scss";
 import { Avatar, Burger } from "@mantine/core";
 
-export default function Navbar({ show, toggleSidebar }: any) {
-  // const PageName =
-  //   SIDEBARDATA?.find((a: any) =>
-  //     a?.path?.includes(path.split("/")?.slice(-1)[0])
-  //   )?.text ||
-  //   reportsList?.find((a: any) =>
-  //     a?.path?.includes(path.split("/")?.slice(-1)[0])
-  //   )?.text;
-
+export default function Navbar({
+  show,
+  toggleSidebar,
+}: {
+  show: boolean;
+  toggleSidebar: () => void;
+}) {
   return (
     <nav className={styles.navbar}>
       <div className={styles.logoWrapper}>
@@ -19,7 +17,7 @@ export default function Navbar({ show, toggleSidebar }: any) {
           aria-label="Toggle navigation"
         />
 
-        <h1>{"Noma'lum sahifa"}</h1>
+        <h1>{"Admin"}</h1>
       </div>
 
       <div className={styles.right}>
