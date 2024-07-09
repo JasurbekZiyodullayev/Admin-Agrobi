@@ -1,4 +1,5 @@
 import { ROUTER } from "@/consts/route";
+import Users from "@/pages/Users/page";
 
 export const RegisteredRouters = [
   {
@@ -6,7 +7,7 @@ export const RegisteredRouters = [
     children: [
       {
         path: ROUTER.USERS,
-        element: "dashbord",
+        element: <Users />,
       },
     ],
   },

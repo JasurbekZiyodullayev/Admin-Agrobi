@@ -2,9 +2,9 @@ import styled from "@/layout/style.module.scss";
 import { HocPrivate } from "./hoc";
 import { ScrollArea } from "@mantine/core";
 import Sidebar from "@/components/layout/sidebar";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Navbar from "@/components/layout/navbar";
-import Users from "@/pages/Users/page";
+import { Outlet } from "react-router-dom";
 export default function PrivateRoute() {
   const [show, setShow] = useState(true);
 
@@ -24,16 +24,14 @@ export default function PrivateRoute() {
             scrollbars="y"
           >
             <Navbar show={show} toggleSidebar={toggleSidebar} />
-            {/* <Container>
-              <Suspense fallback={"loading..."}>
-                <main>
-                  <div className="paper">
-                    <Outlet />
-                  </div>
-                </main>
-              </Suspense>
-              <Footer />
-            </Container> */}
+            <Suspense fallback={"loading..."}>
+              <main>
+                <div className="paper">
+                  <Outlet />
+                </div>
+              </main>
+            </Suspense>
+            {/* <Footer /> */}
           </ScrollArea>
         </div>
       </div>
