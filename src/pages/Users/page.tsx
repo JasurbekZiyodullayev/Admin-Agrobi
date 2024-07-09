@@ -10,6 +10,8 @@ import { Select } from "@/components/forms/select";
 
 export default function Users() {
   const [opened, { open, close }] = useDisclosure(false);
+  const [openedDelete, { open: openDelete, close: closeDelete }] =
+    useDisclosure(false);
 
   const thead = (
     <Table.Tr>
@@ -33,8 +35,26 @@ export default function Users() {
         <Table.Th>nazarov_87</Table.Th>
         <Table.Th>02032008</Table.Th>
         <Table.Th style={{ display: "flex", justifyContent: "space-around" }}>
-          <EditIcon />
-          <TrashIcon />
+          <button
+            style={{
+              background: "transparent",
+              border: "none",
+              cursor: "pointer",
+            }}
+            onClick={openDelete}
+          >
+            <EditIcon />
+          </button>
+          <button
+            style={{
+              background: "transparent",
+              border: "none",
+              cursor: "pointer",
+            }}
+            onClick={openDelete}
+          >
+            <TrashIcon />
+          </button>
         </Table.Th>
       </Table.Tr>
       <Table.Tr>
@@ -45,8 +65,26 @@ export default function Users() {
         <Table.Th>nazarov_87</Table.Th>
         <Table.Th>02032008</Table.Th>
         <Table.Th style={{ display: "flex", justifyContent: "space-around" }}>
-          <EditIcon />
-          <TrashIcon />
+          <button
+            style={{
+              background: "transparent",
+              border: "none",
+              cursor: "pointer",
+            }}
+            onClick={openDelete}
+          >
+            <EditIcon />
+          </button>
+          <button
+            style={{
+              background: "transparent",
+              border: "none",
+              cursor: "pointer",
+            }}
+            onClick={openDelete}
+          >
+            <TrashIcon />
+          </button>
         </Table.Th>
       </Table.Tr>
     </>
@@ -124,6 +162,21 @@ export default function Users() {
             placeholder="Admin"
           />
           <Button className={styled.saveButton}>Saqlash</Button>
+        </div>
+      </Modal>
+      <Modal
+        size="xs"
+        padding={24}
+        opened={openedDelete}
+        onClose={closeDelete}
+        title="Siz rostdanham o'chirishni hohlayysizmi?"
+        centered
+      >
+        <div className={styled.buttons}>
+          <Button w={100}>Ha</Button>
+          <Button w={100} bg="red" onClick={closeDelete}>
+            Yo'q
+          </Button>
         </div>
       </Modal>
     </div>
