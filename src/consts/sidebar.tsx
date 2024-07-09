@@ -6,12 +6,12 @@ export const SIDEBARDATA = [
     id: 0,
     icon: <IconUsers />,
     text: "Users",
-    path: "/users",
+    path: "/admin",
   },
   {
     id: 1,
     icon: <IconPortal />,
     text: "Milliy Portal",
-    path: "/admin",
+    path: "/users",
   },
 ];

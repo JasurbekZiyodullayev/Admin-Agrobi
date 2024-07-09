@@ -4,6 +4,7 @@ import { ScrollArea } from "@mantine/core";
 import Sidebar from "@/components/layout/sidebar";
 import { useState } from "react";
 import Navbar from "@/components/layout/navbar";
+import Users from "@/pages/Users/page";
 export default function PrivateRoute() {
   const [show, setShow] = useState(true);
 
