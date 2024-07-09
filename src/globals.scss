@@ -61,3 +61,44 @@
 a{
     text-decoration: none;
 }
+
+.scroll-element {
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 1rem;
+  border: 1px solid transparent !important;
+  .table-inner {
+    max-width: calc(100vw - 300px);
+    @media (max-width: 991px) {
+      max-width: calc(100vw - 30px);
+      overflow-x: auto;
+    }
+    overflow-x: auto;
+    table {
+      background-color: var(--paper-bg);
+
+      tbody tr {
+        transition: all 0.3s ease;
+      }
+      tbody tr:hover {
+        background-color: var(--site-bg);
+      }
+    }
+    &::-webkit-scrollbar {
+      direction: rtl;
+      width: 0.5em;
+      height: 0.5em;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+      border-radius: 1rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--primary-color);
+      border-radius: 1rem;
+    }
+  }
+}
