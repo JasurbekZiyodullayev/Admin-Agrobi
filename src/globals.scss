@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --sidebar-bg: #ffffff;
+    --paper-bg: #ffffff;
+    --site-bg: #fafbfc;
+    --map-opc: #fafbfc44;
+    --grey-600: #151d48;
+    --grey-500: #dfdfdf;
+    --grey-400: #737791;
+    --grey-100: #ededf3;
+    --grey-300: #f6f6f6;
+    --primary-color: #14a154;
+    --white: #fff;
+    --sidebar-color-1: var(--grey-400);
+    --sidebar-color-2: #737791;
+    --primary-white-color: #14a154;
+    --tb-color: #eef0fa;
+    --xls-color: #e9f4f6;
+    //reports color
+    --primary-color2: #14a154;
+    --hover-report-color: #158d4b;
+  
+    // success
+    --color-success-100: #effbcf;
+    --color-success: #9dd348;
+    --color-primary-100: #e4edff;
+    --color-primary-200: #f8d1d1;
+    --color-primary-400: #fa8080;
+    --color-primary-300: #aec5ff;
+    --color-info-700: #2b6eb7;
+    --color-primary-800: #263893;
+    //map colors
+    --activ-map-color: #98a6eb4d;
+  
+    //chart-color
+    --1-chart-color: #3cd856;
+    --2-chart-color: #14a154;
+    --3-chart-color: #f7df65;
+    --4-chart-color: #f7a265;
+    --5-chart-color: #54cca4;
+    --6-chart-color: #f76565;
+    --7-chart-color: #2538e7;
+    --8-chart-color: #8673e5;
+    --1-passive-chart-color: #3cd85644;
+    --2-passive-chart-color: #14a15444;
+    --3-passive-chart-color: #f7df6544;
+    --4-passive-chart-color: #f7a26544;
+    --5-passive-chart-color: #54cca444;
+    --6-passive-chart-color: #f7656544;
+    --7-passive-chart-color: #2538e744;
+    --8-passive-chart-color: #8673e544;
+  }

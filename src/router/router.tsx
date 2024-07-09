@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { DefualtRouters } from "./private/defualt";
 import { RegisteredRouters } from "./private/registerd";
 import PrivateRoute from "../layout/registered";
+import NotFoundPage from "@/pages/404";
 
 export function Router() {
   const router = createBrowserRouter([
@@ -11,14 +12,14 @@ export function Router() {
     {
       element: <DefualtRoute />,
       children: DefualtRouters,
-      errorElement: <h2>Erorr</h2>,
+      errorElement: <NotFoundPage />,
     },
 
     // login qilgan
     {
       element: <PrivateRoute />,
       children: RegisteredRouters,
-      errorElement: <h2>Erorr</h2>,
+      errorElement: <NotFoundPage />,
     },
   ]);
   return <RouterProvider router={router} />;
