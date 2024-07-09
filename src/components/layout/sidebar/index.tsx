@@ -1,11 +1,11 @@
-import styles from "./sidebar.module.scss";
-import Item from "./components/item";
-import { Burger, ScrollArea } from "@mantine/core";
-import { SIDEBARDATA } from "@/consts/sidebar";
-import LoginIconMini from "@/assets/loginIconMini";
-import { ISidebar } from "@/types/layout";
 import IconDigital from "@/assets/digital";
+import LoginIconMini from "@/assets/loginIconMini";
 import CallCenterComponent from "@/components/callcenter";
+import { SIDEBARDATA } from "@/consts/sidebar";
+import { ISidebar } from "@/types/layout";
+import { Burger, ScrollArea } from "@mantine/core";
+import Item from "./components/item";
+import styles from "./sidebar.module.scss";
 
 export default function Sidebar({
   show,
