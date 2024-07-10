@@ -11,10 +11,9 @@ export default function Users() {
   const { form, close, open, opened, closeDelete, openDelete, openedDelete } =
     useHook();
 
-  const { rows, thead } = TableData(openDelete);
+  const { rows, thead } = TableData({ openDelete });
 
   return (
-    <>
       <div className={styled.container}>
         <div className={styled.title}>
           <h3>Foydalanuvchilar</h3>
@@ -22,14 +21,13 @@ export default function Users() {
         </div>
         <TableComponent thead={thead} rows={rows} />
 
-        <ModalComponent opened={opened} close={close}>
+        <ModalComponent title="Foydalanuvchi qo’shish" opened={opened} close={close}>
           <AddUsers form={form} />
         </ModalComponent>
 
-        <ModalComponent opened={openedDelete} close={closeDelete}>
-          <DeleteUsers close={closeDelete} />
+        <ModalComponent title="Siz rostdanham o'chirib tashlashni xohlaysizmi?" opened={openedDelete} close={closeDelete}>
+          <DeleteUsers />
         </ModalComponent>
       </div>
-    </>
   );
 }

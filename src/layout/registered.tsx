@@ -5,6 +5,7 @@ import Sidebar from "@/components/layout/sidebar";
 import { Suspense, useState } from "react";
 import Navbar from "@/components/layout/navbar";
 import { Outlet } from "react-router-dom";
+import Users from "@/pages/Users/page";
 
 export default function PrivateRoute() {
   const [show, setShow] = useState(true);
@@ -26,6 +27,7 @@ export default function PrivateRoute() {
           >
             <Navbar show={show} toggleSidebar={toggleSidebar} />
             <Suspense fallback={"loading..."}>
+              <Users />
               <Outlet />
             </Suspense>
             {/* <Footer /> */}
