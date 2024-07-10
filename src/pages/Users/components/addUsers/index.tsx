@@ -3,9 +3,12 @@ import { Select } from "@/components/forms/select";
 import { Button } from "@mantine/core";
 import styled from "./style.module.scss";
 
-export default function AddUsers({ form }: any) {
+export default function AddUsers({ form, onSubmit, isLoading }: any) {
   return (
-    <div className={styled.formContainer}>
+    <form
+      onSubmit={form.handleSubmit(onSubmit)}
+      className={styled.formContainer}
+    >
       <Input
         required
         name="Test1"
@@ -42,6 +45,7 @@ export default function AddUsers({ form }: any) {
         placeholder="Parol"
       />
       <Select
+        clearable
         required
         name="Test6"
         control={form.control}
@@ -56,9 +60,11 @@ export default function AddUsers({ form }: any) {
             value: "Owner",
           },
         ]}
-        placeholder="Admin"
+        placeholder="Rollar"
       />
-      <Button className={styled.saveButton}>Saqlash</Button>
-    </div>
+      <Button loading={isLoading} type="submit" className={styled.saveButton}>
+        Saqlash
+      </Button>
+    </form>
   );
 }

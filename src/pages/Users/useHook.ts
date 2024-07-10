@@ -6,8 +6,18 @@ export default function useHook() {
   const [opened, { open, close }] = useDisclosure(false);
   const [openedDelete, { open: openDelete, close: closeDelete }] =
     useDisclosure(false);
+
+  const onSubmit = (data: any) => {
+    console.log(data, "data");
+  };
+
+  const isLoading = true;
+  const isLoadingDelete = true;
   return {
     form,
+    onSubmit,
+    isLoading,
+    isLoadingDelete,
     opened,
     open,
     close,

@@ -1,4 +1,5 @@
 import { Modal } from "@mantine/core";
+import styled from "./style.module.scss";
 
 export default function ModalComponent({
   children,
@@ -9,6 +10,7 @@ export default function ModalComponent({
   return (
     <>
       <Modal
+        className={styled.modal}
         size="xs"
         padding={24}
         opened={opened}
