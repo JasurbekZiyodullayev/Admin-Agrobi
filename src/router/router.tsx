@@ -1,7 +1,7 @@
 import DefualtRoute from "../layout/default";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { DefualtRouters } from "./private/defualt";
-import { RegisteredRouters } from "./private/registerd";
+import { RegisteredRouters } from "./private/registered";
 import PrivateRoute from "../layout/registered";
 import NotFoundPage from "@/pages/404";
 

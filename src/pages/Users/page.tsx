@@ -35,20 +35,18 @@ export default function Users() {
         title="Foydalanuvchi qo’shish"
         opened={opened}
         close={close}
+        size="xs"
       >
-        <AddUsers
-          isLoading={isLoading}
-          onSubmit={onSubmit}
-          form={form}
-        />
+        <AddUsers isLoading={isLoading} onSubmit={onSubmit} form={form} />
       </ModalComponent>
 
       <ModalComponent
-        title="Siz rostdanham o'chirib tashlashni xohlaysizmi?"
+        title="Haqiqatdan ham o'chirmoqchimisiz?"
         opened={openedDelete}
         close={closeDelete}
+        size="xs"
       >
-        <DeleteUsers isLoadingDelete={isLoadingDelete} />
+        <DeleteUsers close={closeDelete} isLoadingDelete={isLoadingDelete} />
       </ModalComponent>
     </div>
   );

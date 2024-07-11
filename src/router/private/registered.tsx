@@ -5,6 +5,7 @@ import Users from "@/pages/Users/page";
 export const RegisteredRouters = [
   {
     path: ROUTER.ADMIN,
+    element: null,
     children: [
       {
         path: ROUTER.USERS,

@@ -6,20 +6,19 @@ export default function ModalComponent({
   opened,
   close,
   title,
+  size,
 }: any) {
   return (
-    <>
-      <Modal
-        className={styled.modal}
-        size="xs"
-        padding={24}
-        opened={opened}
-        onClose={close}
-        title={title}
-        centered
-      >
-        {children}
-      </Modal>
-    </>
+    <Modal
+      className={styled.modal}
+      size={size}
+      padding={24}
+      opened={opened}
+      onClose={close}
+      title={title}
+      centered
+    >
+      {children}
+    </Modal>
   );
 }

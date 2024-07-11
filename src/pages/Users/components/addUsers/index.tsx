@@ -28,7 +28,7 @@ export default function AddUsers({ form, onSubmit, isLoading }: any) {
         name="Test3"
         control={form.control}
         label="Lavozimi"
-        placeholder="F.I.Sh"
+        placeholder="Lavozimi"
       />
       <Input
         required
@@ -45,8 +45,8 @@ export default function AddUsers({ form, onSubmit, isLoading }: any) {
         placeholder="Parol"
       />
       <Select
-        clearable
         required
+        clearable
         name="Test6"
         control={form.control}
         label="Rollar"
