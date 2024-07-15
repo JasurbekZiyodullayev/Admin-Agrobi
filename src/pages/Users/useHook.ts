@@ -1,6 +1,6 @@
-import { FormData } from "@/types/formData";
+import { FormData } from "@/types/formdata";
 import { useDisclosure } from "@mantine/hooks";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "./form.schema";
 
@@ -12,7 +12,7 @@ export default function useHook() {
   const [openedDelete, { open: openDelete, close: closeDelete }] =
     useDisclosure(false);
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log(data, "data");
   };
 
