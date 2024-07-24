@@ -1,4 +1,4 @@
-export type FormData = {
+export type LocalFormData = {
   Test1: string;
   Test2: string;
   Test3: string;
