@@ -10,42 +10,42 @@ export default function AddUsers({ form, onSubmit, isLoading }: any) {
       className={styled.formContainer}
     >
       <Input
-        required
+        withAsterisk
         name="Test1"
         control={form.control}
         label="F.I.Sh"
         placeholder="F.I.Sh"
       />
       <Input
-        required
+        withAsterisk
         name="Test2"
         control={form.control}
         label="Tashkilot nomi"
         placeholder="Tashkilot nomi"
       />
       <Input
-        required
+        withAsterisk
         name="Test3"
         control={form.control}
         label="Lavozimi"
         placeholder="Lavozimi"
       />
       <Input
-        required
+        withAsterisk
         name="Test4"
         control={form.control}
         label="Login"
         placeholder="Login"
       />
       <Input
-        required
+        withAsterisk
         name="Test5"
         control={form.control}
         label="Parol"
         placeholder="Parol"
       />
       <Select
-        required
+        withAsterisk
         clearable
         name="Test6"
         control={form.control}
