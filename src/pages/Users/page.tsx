@@ -17,7 +17,11 @@ export default function Users() {
         <Flex direction="column" gap="16px">
           <CustomTitle open={open} title={"+ Foydalanuvchi qo’shish"} />
           <TableData openDelete={openDelete} />
-          <ModalComponent opened={opened} close={close}>
+          <ModalComponent
+            opened={opened}
+            close={close}
+            modalTitle="Foydalanuvchi qo'shish"
+          >
             <AddUsers form={form} />
           </ModalComponent>
 

@@ -1,6 +1,16 @@
 import { Modal } from "@mantine/core";
 
-export default function ModalComponent({ children, opened, close }: any) {
+export default function ModalComponent({
+  children,
+  opened,
+  close,
+  modalTitle,
+}: {
+  children?: React.ReactNode;
+  opened: boolean;
+  close: () => void;
+  modalTitle?: string;
+}) {
   return (
     <>
       <Modal
@@ -8,7 +18,7 @@ export default function ModalComponent({ children, opened, close }: any) {
         padding={24}
         opened={opened}
         onClose={close}
-        title="Foydalanuvchi qo’shish"
+        title={modalTitle}
         centered
       >
         {children}
