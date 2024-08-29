@@ -1,8 +1,9 @@
 import { Table } from "@mantine/core";
 import EditIcon from "../../../../assets/editIcon";
 import TrashIcon from "../../../../assets/trashIcon";
+import TableComponent from "@/components/table";
 
-export default function TableData({ openDelete }: any) {
+export default function TableData({ openDelete }: { openDelete: () => void }) {
   const thead = (
     <Table.Tr>
       <Table.Th>T/r</Table.Th>
@@ -79,5 +80,5 @@ export default function TableData({ openDelete }: any) {
       </Table.Tr>
     </>
   );
-  return { thead, rows };
+  return <TableComponent rows={rows} thead={thead} />;
 }

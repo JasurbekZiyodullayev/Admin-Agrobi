@@ -1,18 +1,20 @@
 import { Flex, Loader, Table } from "@mantine/core";
-import { useEffect, useRef } from "react";
 
 export default function TableComponent({
   rows,
   isFetching,
   thead,
-  setExcel,
-  show,
   maxWidth,
-}: any) {
-  const tableRef = useRef(null);
-  useEffect(() => {
-    show && setExcel(tableRef.current);
-  }, [tableRef]);
+}: {
+  rows?: React.ReactNode;
+  isFetching?: boolean;
+  thead?: React.ReactNode;
+  maxWidth?: boolean;
+}) {
+  // const tableRef = useRef(null);
+  // useEffect(() => {
+  //   show && setExcel(tableRef.current);
+  // }, [tableRef]);
 
   return (
     <div style={{ width: "100%" }} className="scroll-element">
@@ -21,10 +23,8 @@ export default function TableComponent({
         style={{ maxWidth: maxWidth ? "calc(100vw - 350px)" : "" }}
       >
         <Table
-          ref={tableRef}
           withColumnBorders
           borderColor="#EEF0FA"
-          // borderColor={"var(--tb-color)"}
           verticalSpacing="sm"
           horizontalSpacing="sm"
           styles={{
