@@ -5,16 +5,18 @@ export default function ModalComponent({
   opened,
   close,
   modalTitle,
+  size,
 }: {
   children?: React.ReactNode;
   opened: boolean;
   close: () => void;
   modalTitle?: string;
+  size?: string;
 }) {
   return (
     <>
       <Modal
-        size="xs"
+        size={size ?? "xs"}
         padding={24}
         opened={opened}
         onClose={close}
