@@ -1,11 +1,11 @@
 import { Divider, Flex, SegmentedControl } from "@mantine/core";
 import styled from "./style.module.scss";
 import { useState } from "react";
-import AvailabilityCreate from "../create/availability";
+import AvailabilityCreate from "../create/ava/availability";
 import useHook from "../create/useHook";
-import AccessCreate from "../create/access";
-import ProteinCreate from "../create/protein";
-import AnimalCreate from "../create/animal";
+import AccessCreate from "../create/ava/access";
+import ProteinCreate from "../create/ava/protein";
+import AnimalCreate from "../create/ava/animal";
 
 export default function AddUsers() {
   const [value, setValue] = useState("item1");
