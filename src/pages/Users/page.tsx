@@ -8,8 +8,16 @@ import { Flex } from "@mantine/core";
 import TableData from "./components/tableData";
 
 export default function Users() {
-  const { form, close, open, opened, closeDelete, openDelete, openedDelete } =
-    useHook();
+  const {
+    form,
+    close,
+    open,
+    opened,
+    closeDelete,
+    openDelete,
+    openedDelete,
+    onSubmit,
+  } = useHook();
 
   return (
     <>
@@ -22,7 +30,7 @@ export default function Users() {
             close={close}
             modalTitle="Foydalanuvchi qo'shish"
           >
-            <AddUsers form={form} />
+            <AddUsers form={form} onSubmit={onSubmit} />
           </ModalComponent>
 
           <ModalComponent opened={openedDelete} close={closeDelete}>

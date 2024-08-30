@@ -11,11 +11,6 @@ export default function TableComponent({
   thead?: React.ReactNode;
   maxWidth?: boolean;
 }) {
-  // const tableRef = useRef(null);
-  // useEffect(() => {
-  //   show && setExcel(tableRef.current);
-  // }, [tableRef]);
-
   return (
     <div style={{ width: "100%" }} className="scroll-element">
       <div

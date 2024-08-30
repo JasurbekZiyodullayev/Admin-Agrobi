@@ -22,6 +22,10 @@ export default function ModalComponent({
         onClose={close}
         title={modalTitle}
         centered
+        styles={{
+          content: { background: "var(--site-bg)" },
+          header: { background: "var(--site-bg)" },
+        }}
       >
         {children}
       </Modal>

@@ -11,7 +11,7 @@ import { useState } from "react";
 export default function NationalPortal() {
   const [value, setValue] = useState("item1");
 
-  const { form, close, open, opened, closeDelete, openDelete, openedDelete } =
+  const { close, open, opened, closeDelete, openDelete, openedDelete } =
     useHook();
   return (
     <CustomContainer>
@@ -39,7 +39,7 @@ export default function NationalPortal() {
           modalTitle="Qo'shish"
           size="80%"
         >
-          <AddUsers form={form} />
+          <AddUsers />
         </ModalComponent>
 
         <ModalComponent opened={openedDelete} close={closeDelete}>

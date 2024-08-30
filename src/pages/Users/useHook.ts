@@ -6,6 +6,10 @@ export default function useHook() {
   const [opened, { open, close }] = useDisclosure(false);
   const [openedDelete, { open: openDelete, close: closeDelete }] =
     useDisclosure(false);
+
+  function onSubmit(data: any) {
+    console.log(data);
+  }
   return {
     form,
     opened,
@@ -14,5 +18,6 @@ export default function useHook() {
     openedDelete,
     openDelete,
     closeDelete,
+    onSubmit,
   };
 }
