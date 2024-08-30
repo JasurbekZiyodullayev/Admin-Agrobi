@@ -3,7 +3,7 @@ import TableComponent from "@/components/table";
 import { Button, Flex, Table } from "@mantine/core";
 import { useState } from "react";
 
-export default function AccessCreate({
+export default function ProteinCreate({
   text,
   form,
   onSubmit,

@@ -12,7 +12,7 @@ export default function AvailabilityCreate({
   form?: any;
   onSubmit?: any;
 }) {
-  const [inc, setInc] = useState<number>(20);
+  const [inc, setInc] = useState<number>(21);
   const thead = (
     <Table.Tr>
       <Table.Th>T/r</Table.Th>
@@ -99,7 +99,9 @@ export default function AvailabilityCreate({
   return (
     <Flex direction="column" gap="8px">
       <h4>{text}</h4>
-      <TableComponent rows={rows} thead={thead} />
+      <form onSubmit={form.handleSubmit(onSubmit)}>
+        <TableComponent rows={rows} thead={thead} />
+      </form>
     </Flex>
   );
 }
