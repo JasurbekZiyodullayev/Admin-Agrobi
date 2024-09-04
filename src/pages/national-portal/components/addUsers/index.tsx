@@ -6,6 +6,12 @@ import useHook from "../create/useHook";
 import AccessCreate from "../create/ava/access";
 import ProteinCreate from "../create/ava/protein";
 import AnimalCreate from "../create/ava/animal";
+import RailCreate from "../create/access/rail";
+import PercentCreate from "../create/access/percent";
+import PopulationCreate from "../create/access/population";
+import Population2Create from "../create/access/population2";
+import PrevalenceCreate from "../create/access/prevalence";
+import DomesticCreate from "../create/access/domestic";
 
 export default function AddUsers() {
   const [value, setValue] = useState("item1");
@@ -46,6 +52,38 @@ export default function AddUsers() {
           <AnimalCreate
             text="Hayvonlardan olingan oqsilning o'rtacha ta'minoti"
             form={form}
+          />
+        </Flex>
+      ) : value === "item2" ? (
+        <Flex direction="column" gap="24px" py="24px">
+          <RailCreate
+            form={form}
+            text="100 kvadrat kilometr er maydoniga temir yo'l liniyalarini "
+          />
+          <Divider my="md" />
+          <PercentCreate
+            form={form}
+            text="Qattiq qoplamali yo'llarning ulushi"
+          />
+          <Divider my="md" />
+          <PopulationCreate
+            form={form}
+            text="Umumiy aholida o'rtacha yoki og'ir oziq-ovqat xavfsizligining tarqalishi, o'rtacha 3 yil"
+          />
+          <Divider my="md" />
+          <Population2Create
+            form={form}
+            text="Aholi umumiy sonida og'ir oziq-ovqat xavfsizligining tarqalishi, o'rtacha 3 yil"
+          />
+          <Divider my="md" />
+          <PrevalenceCreate
+            form={form}
+            text="Kam ovqatlanishning tarqalishi, 3 yillik o'rtacha ko'rsatkichlar"
+          />
+          <Divider my="md" />
+          <DomesticCreate
+            form={form}
+            text="Mahalliy oziq-ovqat narxlari indeksi (%)"
           />
         </Flex>
       ) : (

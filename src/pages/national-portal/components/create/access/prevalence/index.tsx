@@ -4,7 +4,7 @@ import TableComponent from "@/components/table";
 import { Button, Flex, Table } from "@mantine/core";
 import { useState } from "react";
 
-export default function RailCreate({
+export default function PrevalenceCreate({
   text,
   form,
   onSubmit,
@@ -19,7 +19,7 @@ export default function RailCreate({
       <Table.Th>T/r</Table.Th>
       <Table.Th miw="150px">Nomi</Table.Th>
       {Array.from({ length: inc }, (_, i: number) => (
-        <Table.Th miw="80px" key={i}>{`20${i < 10 ? "0" + i : i}
+        <Table.Th miw="80px" key={i}>{`20${i + 1 < 10 ? "0" + (i + 1) : i + 1}
         `}</Table.Th>
       ))}
       <Table.Th miw="80px">
@@ -60,8 +60,8 @@ export default function RailCreate({
           name="type"
           defaultValue={"type1"}
           data={[
-            { value: "type1", label: "zichlik" },
-            { value: "type2", label: "uzunlik" },
+            { value: "type1", label: "3 yillik" },
+            { value: "type2", label: "yillik" },
           ]}
         />
       </Flex>

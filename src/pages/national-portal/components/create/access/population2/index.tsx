@@ -1,10 +1,9 @@
 import { Input } from "@/components/forms/input";
-import { Select } from "@/components/forms/select";
 import TableComponent from "@/components/table";
 import { Button, Flex, Table } from "@mantine/core";
 import { useState } from "react";
 
-export default function RailCreate({
+export default function Population2Create({
   text,
   form,
   onSubmit,
@@ -13,14 +12,15 @@ export default function RailCreate({
   form?: any;
   onSubmit?: any;
 }) {
-  const [inc, setInc] = useState<number>(23);
+  const [inc, setInc] = useState<number>(7);
   const thead = (
     <Table.Tr>
       <Table.Th>T/r</Table.Th>
       <Table.Th miw="150px">Nomi</Table.Th>
       {Array.from({ length: inc }, (_, i: number) => (
-        <Table.Th miw="80px" key={i}>{`20${i < 10 ? "0" + i : i}
-        `}</Table.Th>
+        <Table.Th miw="80px" key={i}>{`20${i + 14 < 10 ? "0" + i : i + 14}-${
+          i + 16
+        } `}</Table.Th>
       ))}
       <Table.Th miw="80px">
         <Flex align="center" gap="6px">
@@ -53,18 +53,8 @@ export default function RailCreate({
   );
   return (
     <Flex direction="column" gap="8px">
-      <Flex justify="space-between" align="center" wrap="wrap" gap="20px">
-        <h4>{text}</h4>
-        <Select
-          control={form.control}
-          name="type"
-          defaultValue={"type1"}
-          data={[
-            { value: "type1", label: "zichlik" },
-            { value: "type2", label: "uzunlik" },
-          ]}
-        />
-      </Flex>
+      <h4>{text}</h4>
+
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <TableComponent rows={rows} thead={thead} />
       </form>
