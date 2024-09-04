@@ -7,9 +7,12 @@ import AddUsers from "./components/addUsers";
 import DeleteUsers from "./components/deleteUsers";
 import useHook from "./useHook";
 import { useState } from "react";
+import { useViewportSize } from "@mantine/hooks";
 
 export default function NationalPortal() {
   const [value, setValue] = useState("item1");
+
+  const { width } = useViewportSize();
 
   const { close, open, opened, closeDelete, openDelete, openedDelete } =
     useHook();
@@ -18,7 +21,8 @@ export default function NationalPortal() {
       <Flex direction="column" gap="16px">
         <CustomTitle open={open} title="+ Qo'shish" />
         <SegmentedControl
-          w="50%"
+          w="auto"
+          orientation={width < 1400 ? "vertical" : "horizontal"}
           value={value}
           onChange={setValue}
           data={[

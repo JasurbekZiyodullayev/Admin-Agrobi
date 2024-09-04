@@ -12,6 +12,12 @@ import PopulationCreate from "../create/access/population";
 import Population2Create from "../create/access/population2";
 import PrevalenceCreate from "../create/access/prevalence";
 import DomesticCreate from "../create/access/domestic";
+import CerealCreate from "../create/stability/cereal";
+import LandCreate from "../create/stability/land";
+import FoodCreate from "../create/stability/food";
+import PoliticalCreate from "../create/stability/political";
+import ProductionCreate from "../create/stability/production";
+import VariabilityCreate from "../create/stability/variability";
 
 export default function AddUsers() {
   const [value, setValue] = useState("item1");
@@ -84,6 +90,38 @@ export default function AddUsers() {
           <DomesticCreate
             form={form}
             text="Mahalliy oziq-ovqat narxlari indeksi (%)"
+          />
+        </Flex>
+      ) : value === "item3" ? (
+        <Flex direction="column" gap="24px" py="24px">
+          <CerealCreate
+            form={form}
+            text="Donli ekinlar importiga qaramlilik koeffitsienti, o'rtacha 3 yillik"
+          />
+          <Divider my="md" />
+          <LandCreate
+            form={form}
+            text="Sug'orish uchun jihozlangan ekin maydonlarining foizi"
+          />
+          <Divider my="md" />
+          <FoodCreate
+            form={form}
+            text="Oziq-ovqat importining umumiy tovar eksportiga nisbatan qiymati"
+          />
+          <Divider my="md" />
+          <PoliticalCreate
+            form={form}
+            text="Siyosiy barqarorlik va zo'ravonlik/terrorizmning mavjud e'masligi"
+          />
+          <Divider my="md" />
+          <ProductionCreate
+            form={form}
+            text="Aholi jon boshiga oziq-ovqat ishlab chiqarishning o'zgaruvchanligi (1000 $)"
+          />
+          <Divider my="md" />
+          <VariabilityCreate
+            form={form}
+            text="Aholi jon boshiga oziq-ovqat ta'minotining o'zgaruvchanligi"
           />
         </Flex>
       ) : (
