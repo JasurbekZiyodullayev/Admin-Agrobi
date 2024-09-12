@@ -18,6 +18,10 @@ import FoodCreate from "../create/stability/food";
 import PoliticalCreate from "../create/stability/political";
 import ProductionCreate from "../create/stability/production";
 import VariabilityCreate from "../create/stability/variability";
+import HouseholdsCreate from "../create/utilization/households";
+import SafelyCreate from "../create/utilization/safely";
+import BasicCreate from "../create/utilization/basic";
+import AdditionalPopulationCreate from "../create/additional/population";
 
 export default function AddUsers() {
   const [value, setValue] = useState("item1");
@@ -124,8 +128,30 @@ export default function AddUsers() {
             text="Aholi jon boshiga oziq-ovqat ta'minotining o'zgaruvchanligi"
           />
         </Flex>
+      ) : value === "item4" ? (
+        <Flex direction="column" gap="24px" py="24px">
+          <HouseholdsCreate
+            form={form}
+            text="Kamida asosiy ichimlik suvi xizmatlaridan foydalanadigan uy xo'jaliklari"
+          />
+          <Divider my="md" />
+          <SafelyCreate
+            form={form}
+            text="Xavfsiz ichimlik suvi xizmatlaridan foydalanadigan uy xo'jaliklari"
+          />
+          <Divider my="md" />
+          <BasicCreate
+            form={form}
+            text="Xavfsiz sanitariya xizmatlaridan foydalanadigan aholi"
+          />
+        </Flex>
       ) : (
-        ""
+        <Flex>
+          <AdditionalPopulationCreate
+            form={form}
+            text="Oziq-ovqat uchun oylik o'rtacha chakana narxlar"
+          />
+        </Flex>
       )}
     </div>
   );
