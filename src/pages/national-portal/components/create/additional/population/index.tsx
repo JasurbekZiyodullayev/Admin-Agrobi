@@ -2,6 +2,7 @@ import { Input } from "@/components/forms/input";
 import TableComponent from "@/components/table";
 import { Button, Flex, Table } from "@mantine/core";
 import { useState, useEffect } from "react";
+import { dataLabels } from "./const";
 
 export default function AdditionalPopulationCreate({
   text,
@@ -12,10 +13,9 @@ export default function AdditionalPopulationCreate({
   form?: any;
   onSubmit?: any;
 }) {
-  const [incOut, setIncOut] = useState<number>(2); // Yillar soni
-  const [monthYears, setMonthYears] = useState<string[]>([]); // Oy-yil kombinatsiyasi
+  const [incOut] = useState<number>(2);
+  const [monthYears, setMonthYears] = useState<string[]>([]);
 
-  // Oy-yil kombinatsiyasini yaratish
   const generateMonthYear = (startYear: number, yearCount: number) => {
     const result: string[] = [];
 
@@ -29,23 +29,19 @@ export default function AdditionalPopulationCreate({
   };
 
   useEffect(() => {
-    // 2021 yildan boshlab (startYear) yil soniga (incOut) qarab oy-yillarni yaratish
     const generatedMonthYears = generateMonthYear(21, incOut);
     setMonthYears(generatedMonthYears);
   }, [incOut]);
 
-  // "+" tugmasi bosilganda yil va oyni qo'shish
   const handleAddMonth = () => {
     setMonthYears((prevMonthYears) => {
       const lastYearMonth = prevMonthYears[prevMonthYears.length - 1];
       const [lastYear, lastMonth] = lastYearMonth.split("M").map(Number);
 
       if (lastMonth === 12) {
-        // Agar oy 12 bo'lsa, keyingi yilning 1-oyini qo'shish
-        return [...prevMonthYears, `20${lastYear + 1}M1`];
+        return [...prevMonthYears, `${lastYear + 1}M1`];
       } else {
-        // Aks holda, oyni oshirish
-        return [...prevMonthYears, `20${lastYear}M${lastMonth + 1}`];
+        return [...prevMonthYears, `${lastYear}M${lastMonth + 1}`];
       }
     });
   };
@@ -80,26 +76,57 @@ export default function AdditionalPopulationCreate({
 
   const rows = (
     <>
-      <Table.Tr>
-        <Table.Td>1</Table.Td>
-        <Table.Td>O'zbekiston</Table.Td>
-        {monthYears.map((_, i: number) => (
-          <Table.Td key={i}>
-            <Input required name={`UZ${i}`} control={form.control} />
+      {dataLabels.map((item, index: number) => (
+        <Table.Tr key={index}>
+          <Table.Td
+            style={{
+              position: "sticky",
+              left: 0,
+              zIndex: 3,
+              background: "var(--site-bg)",
+            }}
+          >
+            {index + 1}
           </Table.Td>
-        ))}
-        <Table.Td>
-          <Button type="submit">Yuborish</Button>
-        </Table.Td>
-      </Table.Tr>
+          <Table.Td
+            style={{
+              position: "sticky",
+              left: "42px",
+              zIndex: 3,
+              background: "var(--site-bg)",
+            }}
+          >
+            {item.label}
+          </Table.Td>
+          {monthYears.map((_, i: number) => (
+            <Table.Td key={i}>
+              <Input
+                rules={{
+                  required: {
+                    value: true,
+                    message: "Maydon to'ldirilishi shart",
+                  },
+                }}
+                name={`${item.value}_${i}`}
+                control={form.control}
+              />
+            </Table.Td>
+          ))}
+          <Table.Td>
+            {dataLabels.length === index + 1 && (
+              <Button type="submit">Yuborish</Button>
+            )}
+          </Table.Td>
+        </Table.Tr>
+      ))}
     </>
   );
 
   return (
-    <Flex direction="column" gap="8px">
+    <Flex direction="column" gap="8px" style={{ overflow: "hidden" }}>
       <h4>{text}</h4>
       <form onSubmit={form.handleSubmit(onSubmit)}>
-        <TableComponent rows={rows} thead={thead} />
+        <TableComponent rows={rows} thead={thead} sticky={false} />
       </form>
     </Flex>
   );

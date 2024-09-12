@@ -62,7 +62,16 @@ a{
     text-decoration: none;
 }
 
+.scroll-element::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
+
+
 .scroll-element {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer va Edge */
   border-radius: 1rem;
   overflow: hidden;
   width: 100%;

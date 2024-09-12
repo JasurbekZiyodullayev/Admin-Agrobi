@@ -35,29 +35,29 @@ export default function TableData({ openDelete }: { openDelete?: () => void }) {
   const rows = (
     <>
       <Table.Tr>
-        <Table.Th>1</Table.Th>
-        <Table.Th>Markaziy Osiyo</Table.Th>
-        <Table.Th>12</Table.Th>
-        <Table.Th>13</Table.Th>
-        <Table.Th>14</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th style={{ display: "flex", justifyContent: "space-around" }}>
+        <Table.Td>1</Table.Td>
+        <Table.Td>Markaziy Osiyo</Table.Td>
+        <Table.Td>12</Table.Td>
+        <Table.Td>13</Table.Td>
+        <Table.Td>14</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td style={{ display: "flex", justifyContent: "space-around" }}>
           <button
             style={{
               background: "transparent",
@@ -78,32 +78,32 @@ export default function TableData({ openDelete }: { openDelete?: () => void }) {
           >
             <TrashIcon />
           </button>
-        </Table.Th>
+        </Table.Td>
       </Table.Tr>
       <Table.Tr>
-        <Table.Th>1</Table.Th>
-        <Table.Th>O'zbekiston</Table.Th>
-        <Table.Th>12</Table.Th>
-        <Table.Th>13</Table.Th>
-        <Table.Th>14</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th>15</Table.Th>
-        <Table.Th style={{ display: "flex", justifyContent: "space-around" }}>
+        <Table.Td>1</Table.Td>
+        <Table.Td>O'zbekiston</Table.Td>
+        <Table.Td>12</Table.Td>
+        <Table.Td>13</Table.Td>
+        <Table.Td>14</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td>15</Table.Td>
+        <Table.Td style={{ display: "flex", justifyContent: "space-around" }}>
           <button
             style={{
               background: "transparent",
@@ -124,7 +124,7 @@ export default function TableData({ openDelete }: { openDelete?: () => void }) {
           >
             <TrashIcon />
           </button>
-        </Table.Th>
+        </Table.Td>
       </Table.Tr>
     </>
   );

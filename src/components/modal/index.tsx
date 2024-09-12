@@ -23,8 +23,8 @@ export default function ModalComponent({
         title={modalTitle}
         centered
         styles={{
-          content: { background: "var(--site-bg)" },
-          header: { background: "var(--site-bg)" },
+          content: { background: "var(--site-bg)", color: "var(--grey-600)" },
+          header: { background: "var(--site-bg)", color: "var(--grey-600)" },
         }}
       >
         {children}

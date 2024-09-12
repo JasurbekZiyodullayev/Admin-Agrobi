@@ -46,7 +46,11 @@ export default function NationalPortal() {
           <AddUsers />
         </ModalComponent>
 
-        <ModalComponent opened={openedDelete} close={closeDelete}>
+        <ModalComponent
+          opened={openedDelete}
+          close={closeDelete}
+          modalTitle="O'chirish"
+        >
           <DeleteUsers close={closeDelete} />
         </ModalComponent>
       </Flex>
