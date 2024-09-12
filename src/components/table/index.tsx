@@ -57,7 +57,7 @@ export default function TableComponent({
               backgroundColor: "var(--primary-color)",
             },
             tbody: {
-              backgroundColor: "transparent",
+              backgroundColor: "var(--paper-bg)",
             },
             td: {
               color: "var(--grey-600)",

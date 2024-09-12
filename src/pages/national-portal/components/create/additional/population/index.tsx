@@ -83,7 +83,7 @@ export default function AdditionalPopulationCreate({
               position: "sticky",
               left: 0,
               zIndex: 3,
-              background: "var(--site-bg)",
+              background: "var(--paper-bg)",
             }}
           >
             {index + 1}
@@ -93,7 +93,7 @@ export default function AdditionalPopulationCreate({
               position: "sticky",
               left: "42px",
               zIndex: 3,
-              background: "var(--site-bg)",
+              background: "var(--paper-bg)",
             }}
           >
             {item.label}
