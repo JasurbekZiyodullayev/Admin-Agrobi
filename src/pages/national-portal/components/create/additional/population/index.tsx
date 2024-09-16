@@ -31,12 +31,14 @@ export default function AdditionalPopulationCreate({
   const thead = (
     <Table.Tr>
       <Table.Th miw="150px">Yil</Table.Th>
+      <Table.Th miw="150px">Gender</Table.Th>
 
       {data.map((item, index: number) => (
         <Table.Th key={index} miw="150px">
           {item}
         </Table.Th>
       ))}
+      <Table.Td></Table.Td>
     </Table.Tr>
   );
 
@@ -46,6 +48,17 @@ export default function AdditionalPopulationCreate({
         <Table.Td>
           <Input required name={`UZ`} control={form.control} />
         </Table.Td>
+        <Table.Td>Erkak</Table.Td>
+        {Array.from({ length: data.length }, (_, i: number) => (
+          <Table.Td key={i}>
+            <Input required name={`UZ${i}`} control={form.control} />
+          </Table.Td>
+        ))}
+        <Table.Td></Table.Td>
+      </Table.Tr>
+      <Table.Tr>
+        <Table.Td></Table.Td>
+        <Table.Td>Ayol</Table.Td>
         {Array.from({ length: data.length }, (_, i: number) => (
           <Table.Td key={i}>
             <Input required name={`UZ${i}`} control={form.control} />

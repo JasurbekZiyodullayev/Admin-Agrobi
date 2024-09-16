@@ -3,24 +3,39 @@ import TableComponent from "@/components/table";
 import { Button, Flex, Table } from "@mantine/core";
 import { useState } from "react";
 
-export default function AccessCreate({
+export default function FiveLineTable({
   text,
   form,
   onSubmit,
+  statNum,
+  addition,
+  distance,
 }: {
+  distance?: number;
+  addition: number;
+  statNum: number;
   text?: string;
   form?: any;
   onSubmit?: any;
 }) {
-  const [inc, setInc] = useState<number>(19);
+  const [inc, setInc] = useState<number>(statNum);
   const thead = (
     <Table.Tr>
       <Table.Th>T/r</Table.Th>
       <Table.Th miw="150px">Nomi</Table.Th>
       {Array.from({ length: inc }, (_, i: number) => (
-        <Table.Th miw="80px" key={i}>{`20${i < 10 ? "0" + i : i}-${
-          i < 8 ? "0" + (i + 2) : i + 2
-        }`}</Table.Th>
+        <Table.Th miw="80px" key={i}>{`20${
+          i + addition < 10 ? "0" + (i + addition) : i + addition
+        }${
+          distance
+            ? `-${
+                i + addition < 10 - distance
+                  ? "0" + (i + addition + distance)
+                  : i + addition + distance
+              }`
+            : ""
+        }
+        `}</Table.Th>
       ))}
       <Table.Th miw="80px">
         <Flex align="center" gap="6px">
