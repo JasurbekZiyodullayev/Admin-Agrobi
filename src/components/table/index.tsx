@@ -15,23 +15,19 @@ export default function TableComponent({
 }) {
   return (
     <div
-      style={{
-        width: "100%",
-        overflowX: "auto",
-        overflowY: "auto",
-        scrollbarWidth: "none",
-        msOverflowStyle: "none",
-      }}
+      // style={{
+      //   width: "100%",
+      //   overflowX: "auto",
+      //   overflowY: "auto",
+      //   scrollbarWidth: "none",
+      //   msOverflowStyle: "none",
+      // }}
       className="scroll-element"
     >
       <div
-        className="table-container"
+        className="table-inner"
         style={{
           maxWidth: maxWidth ? "calc(100vw - 350px)" : "",
-          position: "relative",
-          overflowY: "auto",
-          maxHeight: "500px",
-          scrollbarWidth: "none",
         }}
       >
         <Table
@@ -54,7 +50,6 @@ export default function TableComponent({
             th: {
               fontSize: "0.875rem",
               fontWeight: "600",
-              backgroundColor: "var(--primary-color)",
             },
             tbody: {
               backgroundColor: "var(--paper-bg)",

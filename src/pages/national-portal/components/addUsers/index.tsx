@@ -21,6 +21,7 @@ import VariabilityCreate from "../create/stability/variability";
 import HouseholdsCreate from "../create/utilization/households";
 import SafelyCreate from "../create/utilization/safely";
 import BasicCreate from "../create/utilization/basic";
+import AdditionalProductCreate from "../create/additional/product";
 import AdditionalPopulationCreate from "../create/additional/population";
 
 export default function AddUsers() {
@@ -146,15 +147,18 @@ export default function AddUsers() {
           />
         </Flex>
       ) : (
-        <Flex>
-          <AdditionalPopulationCreate
+        <Flex direction="column" gap="24px" py="24px">
+          <AdditionalProductCreate
             form={form}
             text="Oziq-ovqat uchun oylik o'rtacha chakana narxlar"
+          />
+          <Divider my="md" />
+          <AdditionalPopulationCreate
+            form={form}
+            text="Aholining yoshi va jinsi bo'yicha taqsimlanishi"
           />
         </Flex>
       )}
     </div>
   );
 }
-
-
