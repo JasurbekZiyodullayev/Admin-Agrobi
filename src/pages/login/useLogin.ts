@@ -33,7 +33,7 @@ export const useLogin = () => {
           fullname: `${tokendata?.first_name} ${tokendata?.last_name}`,
         });
         await localStorage.setItem(TOKEN, tokens);
-        navigate("/admin/users");
+        navigate("/users");
         notifications.show({
           title: "Tizimga xush kelibsiz!",
           message: `Tabriklaymiz, ${tokendata.username} tizimga muvaffaqqiyatli kirdingiz!`,

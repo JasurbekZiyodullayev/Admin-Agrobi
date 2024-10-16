@@ -1,4 +1,13 @@
+
+.container {
+  display: flex;
+  padding: 30px 17px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
 .formContainer {
+  width: 100%;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -26,4 +35,4 @@
       }
     }
   }
-  
+}

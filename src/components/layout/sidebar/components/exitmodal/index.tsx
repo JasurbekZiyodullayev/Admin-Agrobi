@@ -3,9 +3,12 @@ import style from "../item.module.scss";
 import { Button, Modal } from "@mantine/core";
 
 import { useDisclosure } from "@mantine/hooks";
+import { useNavigate } from "react-router-dom";
+import { clearUser } from "@/utils/user";
 
 export default function ExitModal({ icon, text }: ISidebar) {
   const [opened, { open, close }] = useDisclosure(false);
+  const navigate = useNavigate();
   return (
     <>
       <div
@@ -41,7 +44,14 @@ export default function ExitModal({ icon, text }: ISidebar) {
             <Button onClick={() => close()} variant="outline">
               Qaytish
             </Button>
-            <Button onClick={() => {}} variant="outline" color="red">
+            <Button
+              onClick={() => {
+                clearUser();
+                navigate("/");
+              }}
+              variant="outline"
+              color="red"
+            >
               Chiqish
             </Button>
           </div>
