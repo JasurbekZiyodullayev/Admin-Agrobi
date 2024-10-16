@@ -1,7 +1,7 @@
 import IconDigital from "@/assets/digital";
 import LoginIconMini from "@/assets/loginIconMini";
 import CallCenterComponent from "@/components/callcenter";
-import { SIDEBARDATA } from "@/consts/sidebar";
+import { SIDEBARDATA } from "@/constants/sidebar";
 import { ISidebar } from "@/types/layout";
 import { Burger, ScrollArea } from "@mantine/core";
 import Item from "./components/item";

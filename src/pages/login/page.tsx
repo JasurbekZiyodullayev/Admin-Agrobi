@@ -11,7 +11,7 @@ const Login = () => {
 
   return (
     <div className={style.wrapper}>
-      <div className={style.left}>{/* <AuthShape /> */}</div>
+      <div className={style.left} />
       <div className={style.right}>
         <div className={style.loginIcon}>
           <IconLogin />

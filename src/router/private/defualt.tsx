@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { ROUTER } from "@/consts/route";
+import { ROUTER } from "@/constants/route";
 
 const Login = lazy(async () => await import("@/pages/login"));
 

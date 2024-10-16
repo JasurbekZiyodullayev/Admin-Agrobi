@@ -1,4 +1,4 @@
-import { ROUTER } from "@/consts/route";
+import { ROUTER } from "@/constants/route";
 import Users from "@/pages/Users/page";
 
 export const RegisteredRouters = [
