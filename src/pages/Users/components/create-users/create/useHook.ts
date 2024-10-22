@@ -106,10 +106,15 @@ export default function useHook() {
     {
       onSuccess: async () => {
         await navigate("/users");
-        await notifications.show({
-          message: "Foydalanuvchi qo'shildi!",
-          autoClose: 3000,
-        });
+        id
+          ? await notifications.show({
+              message: "Foydalanuvchi qo'shildi!",
+              autoClose: 3000,
+            })
+          : await notifications.show({
+              message: "Foydalanuvchi ma'lumotlari tahrirlandi!",
+              autoClose: 3000,
+            });
       },
       onError: (error: any) => {
         console.log("error", error);
