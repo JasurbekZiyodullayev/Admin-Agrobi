@@ -5,9 +5,18 @@ import styled from "./style.module.scss";
 import useHook from "./useHook";
 import AddButton from "@/components/addButton";
 import { PhoneInput } from "@/components/forms/input-phone/input";
+import { useEffect, useState } from "react";
 
 export default function CreateUsers() {
-  const { form, onSubmit } = useHook();
+  const { form, onSubmit, data, listTable } = useHook();
+  const [isChecker, setIsChecker] = useState(false);
+  useEffect(() => {
+    if (form.watch("group") === "stat-checker") {
+      setIsChecker(true);
+    } else {
+      setIsChecker(false);
+    }
+  }, [form.watch("group")]);
 
   return (
     <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -121,6 +130,40 @@ export default function CreateUsers() {
                 placeholder="Admin"
               />
             </Grid.Col>
+            {!isChecker && (
+              <>
+                <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
+                  <Select
+                    rules={{
+                      required: {
+                        value: true,
+                        message: "Maydon to'ldirilishi shart",
+                      },
+                    }}
+                    name="user_region"
+                    control={form.control}
+                    label="Hududni tanlang"
+                    data={data}
+                    placeholder="Hudud"
+                  />
+                </Grid.Col>
+                <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
+                  <Select
+                    rules={{
+                      required: {
+                        value: true,
+                        message: "Maydon to'ldirilishi shart",
+                      },
+                    }}
+                    name="tables_list"
+                    control={form.control}
+                    label="Bo'limni tanlang"
+                    data={listTable}
+                    placeholder="Bo'limni tanlang"
+                  />
+                </Grid.Col>
+              </>
+            )}
           </Grid>
           <AddButton isLoading={false} />
         </div>

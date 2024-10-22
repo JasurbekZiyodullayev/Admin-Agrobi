@@ -6,4 +6,6 @@ export type User = {
   occupation: string;
   phone_number: string;
   group: string;
+  user_region: number;
+  tables_list: string;
 };

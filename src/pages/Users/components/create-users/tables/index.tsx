@@ -7,8 +7,11 @@ import { User } from "@/types/api/stat";
 import { Table } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
 import { useMutation, useQuery } from "@tanstack/react-query";
+import useHook from "../create/useHook";
 
 export default function UserTable() {
+  const { data: info, listTable } = useHook();
+
   const { data, refetch } = useQuery(
     [URL_KEYS.GET_STAT_USERS],
     () => GetInfoApi(endpoints.statUsers),
@@ -37,6 +40,8 @@ export default function UserTable() {
       <Table.Th>Lavozimi</Table.Th>
       <Table.Th>Telefon raqami</Table.Th>
       <Table.Th>Roli</Table.Th>
+      <Table.Th>Hudud</Table.Th>
+      <Table.Th>Bo'lim</Table.Th>
       <Table.Th>Amallar</Table.Th>
     </Table.Tr>
   );
@@ -53,6 +58,14 @@ export default function UserTable() {
           <Table.Td>{item.phone_number}</Table.Td>
           <Table.Td>
             {item.group === "stat" ? "To'ldiruvchi" : "Tekshiruvchi"}
+          </Table.Td>
+          <Table.Td>
+            {info?.find((inf: any) => inf.value == item.user_region)?.label ||
+              "-"}
+          </Table.Td>
+          <Table.Td>
+            {listTable?.find((inf: any) => inf.value === item.tables_list)
+              ?.label || "-"}
           </Table.Td>
           <Table.Td style={{ display: "flex", justifyContent: "space-around" }}>
             <EditDeleteButton
