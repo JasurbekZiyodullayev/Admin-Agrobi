@@ -60,12 +60,15 @@ export default function UserTable() {
             {item.group === "stat" ? "To'ldiruvchi" : "Tekshiruvchi"}
           </Table.Td>
           <Table.Td>
-            {info?.find((inf: any) => inf.value == item.user_region)?.label ||
-              "-"}
+            {item.group === "stat"
+              ? info?.find((inf: any) => inf.value == item.user_region)?.label
+              : "-"}
           </Table.Td>
           <Table.Td>
-            {listTable?.find((inf: any) => inf.value === item.tables_list)
-              ?.label || "-"}
+            {item.group === "stat"
+              ? listTable?.find((inf: any) => inf.value === item.tables_list)
+                  ?.label
+              : "-"}
           </Table.Td>
           <Table.Td style={{ display: "flex", justifyContent: "space-around" }}>
             <EditDeleteButton
