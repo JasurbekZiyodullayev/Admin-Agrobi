@@ -14,6 +14,7 @@ export default function CreateUsers() {
   const { form, onSubmit, data, listTable } = useHook();
 
   const [isChecker, setIsChecker] = useState(false);
+  const [isQxb, setIsQxb] = useState(false);
   useEffect(() => {
     if (form.watch("group") === "stat-checker") {
       setIsChecker(true);
@@ -21,6 +22,13 @@ export default function CreateUsers() {
       setIsChecker(false);
     }
   }, [form.watch("group")]);
+  useEffect(() => {
+    if (form.watch("tables_list") === "QXB") {
+      setIsQxb(true);
+    } else {
+      setIsQxb(false);
+    }
+  }, [form.watch("tables_list")]);
 
   const { data: info } = useQuery({
     queryKey: [URL_KEYS.GET_STAT_USERS_BY_ID],
@@ -164,21 +172,6 @@ export default function CreateUsers() {
                         message: "Maydon to'ldirilishi shart",
                       },
                     }}
-                    name="user_region"
-                    control={form.control}
-                    label="Hududni tanlang"
-                    data={data}
-                    placeholder="Hudud"
-                  />
-                </Grid.Col>
-                <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
-                  <Select
-                    rules={{
-                      required: {
-                        value: true,
-                        message: "Maydon to'ldirilishi shart",
-                      },
-                    }}
                     name="tables_list"
                     control={form.control}
                     label="Bo'limni tanlang"
@@ -186,6 +179,23 @@ export default function CreateUsers() {
                     placeholder="Bo'limni tanlang"
                   />
                 </Grid.Col>
+                {isQxb && (
+                  <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
+                    <Select
+                      rules={{
+                        required: {
+                          value: true,
+                          message: "Maydon to'ldirilishi shart",
+                        },
+                      }}
+                      name="user_region"
+                      control={form.control}
+                      label="Hududni tanlang"
+                      data={data}
+                      placeholder="Hudud"
+                    />
+                  </Grid.Col>
+                )}
               </>
             )}
           </Grid>
