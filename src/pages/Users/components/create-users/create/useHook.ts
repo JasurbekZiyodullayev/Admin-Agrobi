@@ -45,12 +45,28 @@ const listTable = [
     label: "QXTEX shakli",
   },
   {
-    value: "OTITI",
-    label: "OTITI shakli",
-  },
-  {
     value: "QXB",
     label: "QXB shakli",
+  },
+  {
+    value: "OTITI_one",
+    label: "OTITI shakli 1 chi",
+  },
+  {
+    value: "OTITI_two",
+    label: "OTITI shakli 2 chi",
+  },
+  {
+    value: "OTITI_three",
+    label: "OTITI shakli 3 chi",
+  },
+  {
+    value: "OTITI_four",
+    label: "OTITI shakli 4 chi",
+  },
+  {
+    value: "OTITI_five",
+    label: "OTITI shakli 5 chi",
   },
 ];
 type FormTypes = {
