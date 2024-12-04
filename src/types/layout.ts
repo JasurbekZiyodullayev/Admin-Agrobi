@@ -8,4 +8,5 @@ export interface ISidebar {
   text: string;
   path?: string;
   id?: number;
+  child?: any;
 }

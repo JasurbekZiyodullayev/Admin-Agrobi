@@ -9,14 +9,19 @@ export const RegisteredRouters = [
       {
         path: ROUTER.USERS,
         children: [
-          { path: "", element: <Users /> },
           {
-            path: ROUTER.CREATE,
-            element: <CreateUsers />,
-          },
-          {
-            path: ROUTER.EDIT,
-            element: <CreateUsers />,
+            path: ROUTER.STATISTICS,
+            children: [
+              { path: "", element: <Users /> },
+              {
+                path: ROUTER.CREATE,
+                element: <CreateUsers />,
+              },
+              {
+                path: ROUTER.EDIT,
+                element: <CreateUsers />,
+              },
+            ],
           },
         ],
       },

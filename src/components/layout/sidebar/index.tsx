@@ -30,8 +30,8 @@ export default function Sidebar({
       />
 
       <ScrollArea className={styles.list}>
-        {SIDEBARDATA?.map(({ icon, path, text, id }: ISidebar) => (
-          <Item key={id} icon={icon} text={text} path={path} />
+        {SIDEBARDATA?.map(({ icon, path, text, id, child }: ISidebar) => (
+          <Item key={id} icon={icon} text={text} path={path} child={child} />
         ))}
       </ScrollArea>
 

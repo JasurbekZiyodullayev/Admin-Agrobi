@@ -102,3 +102,29 @@ a{
     }
   }
 }
+.mantine-Accordion-control{
+  color:var(--grey-400);
+  span{
+    font-size: 1rem;
+    font-weight: 500;
+
+  }
+  &:hover {
+    background-color:transparent;
+    --sidebar-color-1: var(--primary-color);
+    --sidebar-color-2: var(--primary-color);
+    font-weight: 500;
+    color: var(--primary-color);
+  }
+
+}
+.mantine-Accordion-control{
+  &.active {
+    --sidebar-color-1: #fff !important;
+    --sidebar-color-2: #fff !important;
+    font-weight: 500;
+    background: var(--primary-color) !important;
+    color: var(--white) !important;
+    background: var(--primary-color) !important;
+  }
+}
