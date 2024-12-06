@@ -121,7 +121,7 @@ export default function useHook() {
         : PostInfoApi(endpoints.statUsers, data),
     {
       onSuccess: async () => {
-        await navigate("/users");
+        await navigate("/users/statistics");
         id
           ? await notifications.show({
               message: "Foydalanuvchi qo'shildi!",
