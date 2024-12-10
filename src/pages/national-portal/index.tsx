@@ -1,39 +1,51 @@
-import { Flex, SegmentedControl } from "@mantine/core";
-import TableData from "./components/tableData";
+import { Flex, List } from "@mantine/core";
 import ModalComponent from "@/components/modal";
 import AddUsers from "./components/addUsers";
 import DeleteUsers from "./components/deleteUsers";
 import useHook from "./useHook";
-import { useState } from "react";
-import { useViewportSize } from "@mantine/hooks";
+import styled from "./style.module.scss";
+import { ISelectProp } from "@/types/select";
+import { useNavigate } from "react-router-dom";
+const list: ISelectProp[] = [
+  {
+    value: "provided",
+    label: "Oziq-ovqat mahsulotlari mavjudligi",
+  },
+  {
+    value: "available",
+    label: "Oziq-ovqat mahsulotlariga erisha olish imkoniyati",
+  },
+  {
+    value: "stability",
+    label: "Barqarorlik",
+  },
+  {
+    value: "utilization",
+    label: "Oziq-ovqatdan foydalanish",
+  },
+  {
+    value: "addition",
+    label: "Qo’shimcha foydali statistika",
+  },
+];
 
 export default function NationalPortal() {
-  const [value, setValue] = useState("item1");
+  const navigate = useNavigate();
 
-  const { width } = useViewportSize();
-
-  const { close, opened, closeDelete, openDelete, openedDelete } = useHook();
+  const { close, opened, closeDelete, openedDelete } = useHook();
   return (
     <div>
       <Flex direction="column" gap="16px">
-        {/* <CustomTitle open={open} title="+ Qo'shish" /> */}
-        <SegmentedControl
-          w="auto"
-          orientation={width < 1400 ? "vertical" : "horizontal"}
-          value={value}
-          onChange={setValue}
-          data={[
-            { label: "Oziq-ovqat mahsulotlari mavjudligi", value: "item1" },
-            {
-              label: "Oziq-ovqat mahsulotlariga erisha olish imkoniyati",
-              value: "item2",
-            },
-            { label: "Barqarorlik", value: "item3" },
-            { label: "Organizmda o'zlashtish", value: "item4" },
-            { label: "Qo’shimcha foydali statistika", value: "item5" },
-          ]}
-        />
-        <TableData openDelete={openDelete} />
+        <List className={styled.lists}>
+          {list.map((item) => (
+            <List.Item
+              onClick={() => navigate(`${item.value}`)}
+              key={item.value}
+            >
+              {item.label}
+            </List.Item>
+          ))}
+        </List>
         <ModalComponent
           opened={opened}
           close={close}

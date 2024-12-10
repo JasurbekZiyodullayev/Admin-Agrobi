@@ -22,7 +22,7 @@ export const SIDEBARDATA = [
       {
         id: 33,
         text: "Milliy portal",
-        path: "/portal",
+        path: "/portal-users",
       },
     ],
   },

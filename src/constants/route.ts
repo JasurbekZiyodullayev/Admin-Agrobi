@@ -5,5 +5,10 @@ export const ROUTER = {
   GENERAL: "general",
   CREATE: "create",
   PORTAL: "portal",
+  PROVIDED: "provided",
+  AVAILABLE: "available",
+  STABILITY: "stability",
+  UTILIZATION: "utilization",
+  ADDITION: "addition",
   EDIT: "edit/:id",
 };

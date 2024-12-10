@@ -1,0 +1,19 @@
+.lists{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    li{
+        padding: 10px 12px;
+        display: flex;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        background-color: #fff;
+        box-shadow: 5px 0 0 0 var(--primary-color), -5px 0 0 0 var(--primary-color);
+        &:hover{
+            transform: translateY(-2px);
+        }
+    }
+}

@@ -17,17 +17,19 @@ export default function PrivateRoute() {
       <div className={styled.wrapper}>
         <Sidebar show={show} toggleSidebar={toggleSidebar} />
         <div className={styled.inner}>
+          <Navbar show={show} toggleSidebar={toggleSidebar} />
           <ScrollArea
-            h={"100vh"}
+            h={"calc(100vh - 86px)"}
             offsetScrollbars
             scrollbarSize={0}
             scrollHideDelay={1500}
-            scrollbars="y"
+            scrollbars="xy"
           >
-            <Navbar show={show} toggleSidebar={toggleSidebar} />
-            <Suspense fallback={"loading..."}>
-              <Outlet />
-            </Suspense>
+            <div className={styled.outline}>
+              <Suspense fallback={"loading..."}>
+                <Outlet />
+              </Suspense>
+            </div>
             {/* <Footer /> */}
           </ScrollArea>
         </div>
