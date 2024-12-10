@@ -1,4 +1,5 @@
 import { ROUTER } from "@/constants/route";
+import NationalPortal from "@/pages/national-portal";
 import CreateUsers from "@/pages/Users/components/create-users/create";
 import CreateUsersPortal from "@/pages/Users/general/components/create-users/create";
 import GeneralUserPage from "@/pages/Users/general/page";
@@ -43,7 +44,7 @@ export const RegisteredRouters = [
       },
       {
         path: ROUTER.PORTAL,
-        element: <h5>Hello</h5>,
+        element: <NationalPortal />,
       },
     ],
   },
