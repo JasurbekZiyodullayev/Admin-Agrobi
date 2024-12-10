@@ -1,5 +1,7 @@
 import { ROUTER } from "@/constants/route";
 import CreateUsers from "@/pages/Users/components/create-users/create";
+import CreateUsersPortal from "@/pages/Users/general/components/create-users/create";
+import GeneralUserPage from "@/pages/Users/general/page";
 import Users from "@/pages/Users/page";
 
 export const RegisteredRouters = [
@@ -23,7 +25,25 @@ export const RegisteredRouters = [
               },
             ],
           },
+          {
+            path: ROUTER.GENERAL,
+            children: [
+              { path: "", element: <GeneralUserPage /> },
+              {
+                path: ROUTER.CREATE,
+                element: <CreateUsersPortal />,
+              },
+              {
+                path: ROUTER.EDIT,
+                element: <CreateUsersPortal />,
+              },
+            ],
+          },
         ],
+      },
+      {
+        path: ROUTER.PORTAL,
+        element: <h5>Hello</h5>,
       },
     ],
   },
