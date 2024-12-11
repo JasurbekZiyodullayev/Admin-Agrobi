@@ -12,6 +12,10 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    host: true, // Tarmoq orqali kirishga ruxsat
+    port: 5173, // Portni belgilash (kerak bo'lsa)
+  },
   plugins: [
     react(),
     svgrPlugin(),

@@ -5,19 +5,23 @@ import path from "path";
 import checker from "vite-plugin-checker";
 import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
-    resolve: {
-        alias: {
-            //@ts-ignore
-            "@": path.resolve(__dirname, "./src"),
-        },
+  resolve: {
+    alias: {
+      //@ts-ignore
+      "@": path.resolve(__dirname, "./src"),
     },
-    plugins: [
-        react(),
-        svgrPlugin(),
-        tsconfigPaths(),
-        checker({
-            overlay: true,
-            typescript: true,
-        }),
-    ],
+  },
+  server: {
+    host: true,
+    port: 5173,
+  },
+  plugins: [
+    react(),
+    svgrPlugin(),
+    tsconfigPaths(),
+    checker({
+      overlay: true,
+      typescript: true,
+    }),
+  ],
 });
