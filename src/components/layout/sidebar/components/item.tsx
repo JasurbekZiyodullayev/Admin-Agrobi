@@ -23,7 +23,7 @@ export default function Item({ icon, path = "#", text, child }: ISidebar) {
           <Accordion.Item value={path}>
             <Accordion.Control
               icon={icon}
-              onClick={() => navigate("/users/statistics")}
+              onClick={() => navigate("/users/general")}
               className={`${location.pathname.includes(path) ? "active" : ""}`}
             >
               {text}

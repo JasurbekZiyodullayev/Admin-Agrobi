@@ -7,68 +7,6 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 
-const listTable = [
-  {
-    value: "VCHR",
-    label: "VCHR shakli",
-  },
-  {
-    value: "IJS",
-    label: "IJS shakli",
-  },
-  {
-    value: "O'KH",
-    label: "O'KH shakli",
-  },
-  {
-    value: "QXXK",
-    label: "QXXK shakli",
-  },
-  {
-    value: "DILI",
-    label: "DILI shakli",
-  },
-  {
-    value: "NSM",
-    label: "NSM shakli",
-  },
-  {
-    value: "URM",
-    label: "URM shakli",
-  },
-  {
-    value: "TTRS",
-    label: "TTRS shakli",
-  },
-  {
-    value: "QXTEX",
-    label: "QXTEX shakli",
-  },
-  {
-    value: "QXB",
-    label: "QXB shakli",
-  },
-  {
-    value: "OTITI_one",
-    label: "OTITI shakli 1 chi",
-  },
-  {
-    value: "OTITI_two",
-    label: "OTITI shakli 2 chi",
-  },
-  {
-    value: "OTITI_three",
-    label: "OTITI shakli 3 chi",
-  },
-  {
-    value: "OTITI_four",
-    label: "OTITI shakli 4 chi",
-  },
-  {
-    value: "OTITI_five",
-    label: "OTITI shakli 5 chi",
-  },
-];
 type FormTypes = {
   first_name: string;
   last_name: string;
@@ -105,22 +43,6 @@ export default function useHook() {
     },
   });
 
-  const { data } = useQuery(
-    [URL_KEYS.GET_REGION],
-    () => GetInfoApi(`/tool/region/`),
-    {
-      select: (res) => {
-        const options = res?.data.map((item: any) => {
-          return {
-            value: String(item?.id),
-            label: item?.name_uz,
-          };
-        });
-        return options;
-      },
-    }
-  );
-
   const { mutate, isLoading } = useMutation(
     (data: FormTypes) =>
       id
@@ -128,7 +50,7 @@ export default function useHook() {
         : PostInfoApi(endpoints.statUsers, data),
     {
       onSuccess: async () => {
-        await navigate("/users/statistics");
+        await navigate("/users/portal-users");
         id
           ? await notifications.show({
               message: "Foydalanuvchi qo'shildi!",
@@ -153,10 +75,10 @@ export default function useHook() {
   function onSubmit(data: FormTypes) {
     const payload: FormTypes = {
       ...data,
-      user_region: Number(data.user_region) || null,
-      group: [data.group2 || "stat"],
-      directions: ["STAT"],
-      user_type: data.group2 === "stat" ? "ADMIN" : "SUPERADMIN",
+      user_region: null,
+      group: ["stat"],
+      directions: ["PORTAL"],
+      user_type: "ADMIN",
     };
     delete payload.group2;
     mutate(payload);
@@ -167,7 +89,5 @@ export default function useHook() {
     onSubmit,
     isLoading,
     isFetching,
-    data,
-    listTable,
   };
 }

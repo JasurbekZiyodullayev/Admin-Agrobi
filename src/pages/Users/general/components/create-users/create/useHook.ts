@@ -14,9 +14,12 @@ type FormTypes = {
   password: string;
   occupation: string;
   phone_number: string;
-  group: string;
+  group2?: string;
+  group?: string[];
   user_region: number;
+  directions: string[];
   tables_list: string;
+  user_type: string;
 };
 
 export default function useHook() {
@@ -31,35 +34,23 @@ export default function useHook() {
     onSuccess: (res) => {
       const data = res.data;
       if (data) {
-        form.reset({ ...data, user_region: String(data.user_region) });
+        form.reset({
+          ...data,
+          user_region: String(data.user_region),
+          group2: data.group[0],
+        });
       }
     },
   });
 
-  const { data } = useQuery(
-    [URL_KEYS.GET_REGION],
-    () => GetInfoApi(`/tool/region/`),
-    {
-      select: (res) => {
-        const options = res?.data.map((item: any) => {
-          return {
-            value: String(item?.id),
-            label: item?.name_uz,
-          };
-        });
-        return options;
-      },
-    }
-  );
-
-  const { isLoading } = useMutation(
+  const { mutate, isLoading } = useMutation(
     (data: FormTypes) =>
       id
         ? putRequest(endpoints.statUsers + `${id}/`, data)
         : PostInfoApi(endpoints.statUsers, data),
     {
       onSuccess: async () => {
-        await navigate("/users/statistics");
+        await navigate("/users/general");
         id
           ? await notifications.show({
               message: "Foydalanuvchi qo'shildi!",
@@ -82,7 +73,9 @@ export default function useHook() {
   );
 
   function onSubmit(data: FormTypes) {
-    console.log(data);
+    const payload: FormTypes = { ...data, group: [data.group2 || "stat-read"] };
+    delete payload.group2;
+    mutate(payload);
   }
 
   return {
@@ -90,6 +83,5 @@ export default function useHook() {
     onSubmit,
     isLoading,
     isFetching,
-    data,
   };
 }

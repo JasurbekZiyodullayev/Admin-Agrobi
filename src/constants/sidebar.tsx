@@ -31,7 +31,7 @@ export const SIDEBARDATA = [
     id: 1,
     icon: <IconPortal />,
     text: "Milliy Portal",
-    path: "/portal",
+    path: "/portals",
   },
   {
     id: 4,

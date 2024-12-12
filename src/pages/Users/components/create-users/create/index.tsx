@@ -6,22 +6,19 @@ import useHook from "./useHook";
 import AddButton from "@/components/addButton";
 import { PhoneInput } from "@/components/forms/input-phone/input";
 import { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { GetInfoApi } from "@/shared/modules/getAllRequest";
-import { URL_KEYS } from "@/shared/endpoints";
 
-export default function CreateUsers() {
+export default function CreateUsersStat() {
   const { form, onSubmit, data, listTable } = useHook();
 
   const [isChecker, setIsChecker] = useState(false);
   const [isQxb, setIsQxb] = useState(false);
   useEffect(() => {
-    if (form.watch("group") === "stat-checker") {
+    if (form.watch("group2") === "stat-checker") {
       setIsChecker(true);
     } else {
       setIsChecker(false);
     }
-  }, [form.watch("group")]);
+  }, [form.watch("group2")]);
   useEffect(() => {
     if (form.watch("tables_list") === "QXB") {
       setIsQxb(true);
@@ -29,17 +26,6 @@ export default function CreateUsers() {
       setIsQxb(false);
     }
   }, [form.watch("tables_list")]);
-
-  const { data: info } = useQuery({
-    queryKey: [URL_KEYS.GET_STAT_USERS_BY_ID],
-    queryFn: () => GetInfoApi(`/auth/profiles/`),
-    select: (res) => {
-      const data = res?.data?.find(
-        (item: any) => item.group === "stat-checker"
-      );
-      return data;
-    },
-  });
 
   return (
     <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -137,28 +123,19 @@ export default function CreateUsers() {
                     message: "Maydon to'ldirilishi shart",
                   },
                 }}
-                name="group"
+                name="group2"
                 control={form.control}
-                label="Rollar"
-                data={
-                  info
-                    ? [
-                        {
-                          label: "To'ldiruvchi",
-                          value: "stat",
-                        },
-                      ]
-                    : [
-                        {
-                          label: "Tekshiruvchi",
-                          value: "stat-checker",
-                        },
-                        {
-                          label: "To'ldiruvchi",
-                          value: "stat",
-                        },
-                      ]
-                }
+                label="Ruxsatlar"
+                data={[
+                  {
+                    label: "Tekshiruvchi",
+                    value: "stat-checker",
+                  },
+                  {
+                    label: "To'ldiruvchi",
+                    value: "stat",
+                  },
+                ]}
                 placeholder="Admin"
               />
             </Grid.Col>

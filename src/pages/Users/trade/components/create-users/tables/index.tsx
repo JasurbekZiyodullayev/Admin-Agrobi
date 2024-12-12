@@ -7,11 +7,8 @@ import { User } from "@/types/api/stat";
 import { Table } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import useHook from "../create/useHook";
 
 export default function UserTable() {
-  const { data: info, listTable } = useHook();
-
   const { data, refetch } = useQuery(
     [URL_KEYS.GET_STAT_USERS],
     () => GetInfoApi(endpoints.statUsers),
@@ -19,6 +16,8 @@ export default function UserTable() {
       select: (res: { data: User[] }) => res?.data,
     }
   );
+  console.log("get", data);
+
   const { mutate, isLoading: deleteLoading } = useMutation(
     (id: string) => deleteRequest(`/auth/profiles/${id}/`),
     {
@@ -39,9 +38,6 @@ export default function UserTable() {
       <Table.Th>Foydalanuvchi nomi</Table.Th>
       <Table.Th>Lavozimi</Table.Th>
       <Table.Th>Telefon raqami</Table.Th>
-      <Table.Th>Roli</Table.Th>
-      <Table.Th>Hudud</Table.Th>
-      <Table.Th>Bo'lim</Table.Th>
       <Table.Th>Amallar</Table.Th>
     </Table.Tr>
   );
@@ -50,9 +46,7 @@ export default function UserTable() {
     <>
       {data
         ?.filter(
-          (el) =>
-            (el.group.includes("stat") || el.group.includes("stat-checker")) &&
-            el.directions.includes("STAT")
+          (el) => el.group.includes("stat") && el.directions.includes("PORTAL")
         )
         .map((item, index: number) => (
           <Table.Tr key={item.id}>
@@ -62,24 +56,6 @@ export default function UserTable() {
             <Table.Td>{item.username}</Table.Td>
             <Table.Td>{item.occupation}</Table.Td>
             <Table.Td>{item.phone_number}</Table.Td>
-            <Table.Td>
-              {item.group.includes("stat")
-                ? "To'ldiruvchi"
-                : item.group.includes("stat-read")
-                ? "Kuzatuvchi"
-                : "Tekshiruvchi"}
-            </Table.Td>
-            <Table.Td>
-              {item.group[0] === "stat"
-                ? info?.find((inf: any) => inf.value == item.user_region)?.label
-                : "-"}
-            </Table.Td>
-            <Table.Td>
-              {item.group[0] === "stat"
-                ? listTable?.find((inf: any) => inf.value === item.tables_list)
-                    ?.label
-                : "-"}
-            </Table.Td>
             <Table.Td>
               <EditDeleteButton
                 id={item.id}

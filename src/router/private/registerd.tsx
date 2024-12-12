@@ -2,10 +2,12 @@ import { ROUTER } from "@/constants/route";
 import NationalPortal from "@/pages/national-portal";
 import TableOne from "@/pages/national-portal/components/table-1";
 import CreateTable from "@/pages/national-portal/components/table-1/create";
-import CreateUsers from "@/pages/Users/components/create-users/create";
-import CreateUsersPortal from "@/pages/Users/general/components/create-users/create";
+import CreateUsersStat from "@/pages/Users/components/create-users/create";
+import CreateUsersGeneral from "@/pages/Users/general/components/create-users/create";
 import GeneralUserPage from "@/pages/Users/general/page";
 import Users from "@/pages/Users/page";
+import CreateUsersPortal from "@/pages/Users/trade/components/create-users/create";
+import TradeUserPage from "@/pages/Users/trade/page";
 
 export const RegisteredRouters = [
   {
@@ -20,11 +22,11 @@ export const RegisteredRouters = [
               { path: "", element: <Users /> },
               {
                 path: ROUTER.CREATE,
-                element: <CreateUsers />,
+                element: <CreateUsersStat />,
               },
               {
                 path: ROUTER.EDIT,
-                element: <CreateUsers />,
+                element: <CreateUsersStat />,
               },
             ],
           },
@@ -32,6 +34,20 @@ export const RegisteredRouters = [
             path: ROUTER.GENERAL,
             children: [
               { path: "", element: <GeneralUserPage /> },
+              {
+                path: ROUTER.CREATE,
+                element: <CreateUsersGeneral />,
+              },
+              {
+                path: ROUTER.EDIT,
+                element: <CreateUsersGeneral />,
+              },
+            ],
+          },
+          {
+            path: ROUTER.PORTAL,
+            children: [
+              { path: "", element: <TradeUserPage /> },
               {
                 path: ROUTER.CREATE,
                 element: <CreateUsersPortal />,
@@ -45,11 +61,11 @@ export const RegisteredRouters = [
         ],
       },
       {
-        path: ROUTER.PORTAL,
+        path: ROUTER.PORTALS,
         element: <NationalPortal />,
       },
       {
-        path: `${ROUTER.PORTAL}/${ROUTER.PROVIDED}`,
+        path: `${ROUTER.PORTALS}/${ROUTER.PROVIDED}`,
         children: [
           { path: "", element: <TableOne /> },
           {
@@ -63,19 +79,19 @@ export const RegisteredRouters = [
         ],
       },
       {
-        path: `${ROUTER.PORTAL}/${ROUTER.ADDITION}`,
+        path: `${ROUTER.PORTALS}/${ROUTER.ADDITION}`,
         element: <>weew1</>,
       },
       {
-        path: `${ROUTER.PORTAL}/${ROUTER.AVAILABLE}`,
+        path: `${ROUTER.PORTALS}/${ROUTER.AVAILABLE}`,
         element: <>weew2</>,
       },
       {
-        path: `${ROUTER.PORTAL}/${ROUTER.UTILIZATION}`,
+        path: `${ROUTER.PORTALS}/${ROUTER.UTILIZATION}`,
         element: <>weew3</>,
       },
       {
-        path: `${ROUTER.PORTAL}/${ROUTER.STABILITY}`,
+        path: `${ROUTER.PORTALS}/${ROUTER.STABILITY}`,
         element: <>weew4</>,
       },
     ],
