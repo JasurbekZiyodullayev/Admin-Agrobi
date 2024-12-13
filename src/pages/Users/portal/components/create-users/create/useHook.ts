@@ -76,7 +76,7 @@ export default function useHook() {
     const payload: FormTypes = {
       ...data,
       user_region: null,
-      group: ["stat"],
+      group: ["stat-checker"],
       directions: ["PORTAL"],
       user_type: "ADMIN",
     };

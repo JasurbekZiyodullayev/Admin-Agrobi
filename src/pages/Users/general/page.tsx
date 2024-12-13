@@ -8,14 +8,14 @@ export default function GeneralUserPage() {
   const role = getRole();
   return (
     <>
-      {role?.directions ? (
-        <Flex justify="center" align="center" h="calc(100vh - 120px)">
-          <NotPremission />
-        </Flex>
-      ) : (
+      {role?.user_id === 1 ? (
         <div className={styled.container}>
           <AddUsers />
         </div>
+      ) : (
+        <Flex justify="center" align="center" h="calc(100vh - 120px)">
+          <NotPremission />
+        </Flex>
       )}
     </>
   );

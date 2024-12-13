@@ -16,8 +16,15 @@ export const RegisteredRouters = [
     path: ROUTER.AUTH,
     children: [
       {
+        // index: true,
         path: ROUTER.USERS,
+        // element: <GeneralUserPage />,
+
         children: [
+          {
+            index: true,
+            element: <GeneralUserPage />,
+          },
           {
             path: ROUTER.STATISTICS,
             children: [

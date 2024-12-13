@@ -45,7 +45,9 @@ export default function UserTable() {
     <>
       {data
         ?.filter(
-          (el) => el.group.includes("stat") && el.directions.includes("PORTAL")
+          (el) =>
+            el.group.includes("stat-checker") &&
+            el.directions.includes("PORTAL")
         )
         .map((item, index: number) => (
           <Table.Tr key={item.id}>

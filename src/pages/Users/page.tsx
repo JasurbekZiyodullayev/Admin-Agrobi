@@ -8,10 +8,15 @@ import NotPremission from "@/components/not-permission";
 export default function Users() {
   const role = getRole();
   const [open, setOpen] = useState(false);
+  console.log("role", role);
+
   useEffect(() => {
-    if (role?.directions) {
+    if (role?.user_type === "SUPERADMIN" && role?.directions) {
       setOpen(role.directions.includes("STAT"));
     } else {
+      setOpen(false);
+    }
+    if (role?.user_id === 1) {
       setOpen(true);
     }
   }, [role]);

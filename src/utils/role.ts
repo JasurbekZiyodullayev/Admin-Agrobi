@@ -6,6 +6,8 @@ interface CustomJwtPayload extends JwtPayload {
   directions: string[];
   tables_list?: string;
   user_region?: string;
+  user_id?: number;
+  user_type?: string;
 }
 
 export const getRole = () => {

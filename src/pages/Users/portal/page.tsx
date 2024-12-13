@@ -8,9 +8,16 @@ export default function PortalUserPage() {
   const role = getRole();
   const [open, setOpen] = useState(false);
   useEffect(() => {
-    if (role?.directions) {
+    if (
+      role?.user_type === "SUPERADMIN" &&
+      role?.directions &&
+      role?.group === "stat-checker"
+    ) {
       setOpen(role.directions.includes("PORTAL"));
     } else {
+      setOpen(false);
+    }
+    if (role?.user_id === 1) {
       setOpen(true);
     }
   }, [role]);
