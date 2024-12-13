@@ -17,8 +17,8 @@ type FormTypes = {
   group2?: string;
   group?: string[];
   user_region: number | null;
-  directions: string[];
   tables_list: string;
+  directions: string[];
   user_type: string;
 };
 
@@ -50,7 +50,7 @@ export default function useHook() {
         : PostInfoApi(endpoints.statUsers, data),
     {
       onSuccess: async () => {
-        await navigate("/users/general");
+        await navigate("/users/portal-users");
         id
           ? await notifications.show({
               message: "Foydalanuvchi qo'shildi!",
@@ -75,8 +75,10 @@ export default function useHook() {
   function onSubmit(data: FormTypes) {
     const payload: FormTypes = {
       ...data,
-      group: [data.group2 || "stat-read"],
       user_region: null,
+      group: ["stat"],
+      directions: ["PORTAL"],
+      user_type: "ADMIN",
     };
     delete payload.group2;
     mutate(payload);

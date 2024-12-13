@@ -5,7 +5,7 @@ import useHook from "./useHook";
 import AddButton from "@/components/addButton";
 import { PhoneInput } from "@/components/forms/input-phone/input";
 
-export default function CreateUsersTrade() {
+export default function CreateUsersPortal() {
   const { form, onSubmit } = useHook();
 
   return (

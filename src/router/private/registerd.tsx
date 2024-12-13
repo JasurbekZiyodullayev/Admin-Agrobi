@@ -6,7 +6,9 @@ import CreateUsersStat from "@/pages/Users/components/create-users/create";
 import CreateUsersGeneral from "@/pages/Users/general/components/create-users/create";
 import GeneralUserPage from "@/pages/Users/general/page";
 import Users from "@/pages/Users/page";
-import CreateUsersPortal from "@/pages/Users/trade/components/create-users/create";
+import CreateUsersPortal from "@/pages/Users/portal/components/create-users/create";
+import PortalUserPage from "@/pages/Users/portal/page";
+import CreateUsersTrade from "@/pages/Users/trade/components/create-users/create";
 import TradeUserPage from "@/pages/Users/trade/page";
 
 export const RegisteredRouters = [
@@ -47,7 +49,7 @@ export const RegisteredRouters = [
           {
             path: ROUTER.PORTAL,
             children: [
-              { path: "", element: <TradeUserPage /> },
+              { path: "", element: <PortalUserPage /> },
               {
                 path: ROUTER.CREATE,
                 element: <CreateUsersPortal />,
@@ -55,6 +57,20 @@ export const RegisteredRouters = [
               {
                 path: ROUTER.EDIT,
                 element: <CreateUsersPortal />,
+              },
+            ],
+          },
+          {
+            path: ROUTER.TRADE,
+            children: [
+              { path: "", element: <TradeUserPage /> },
+              {
+                path: ROUTER.CREATE,
+                element: <CreateUsersTrade />,
+              },
+              {
+                path: ROUTER.EDIT,
+                element: <CreateUsersTrade />,
               },
             ],
           },

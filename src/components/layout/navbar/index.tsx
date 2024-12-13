@@ -1,3 +1,4 @@
+import { getUser } from "@/utils/user";
 import styles from "./navbar.module.scss";
 import { Avatar, Burger } from "@mantine/core";
 
@@ -8,6 +9,8 @@ export default function Navbar({
   show: boolean;
   toggleSidebar: () => void;
 }) {
+  const user = getUser();
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.logoWrapper}>
@@ -29,8 +32,8 @@ export default function Navbar({
             // src="https://images.pexels.com/photos/18482092/pexels-photo-18482092.jpeg?auto=compress&cs=tinysrgb&w=600"
           />
           <div className={styles.wrapAvatarText}>
-            <h3>User</h3>
-            <p>@username</p>
+            <h3>{user?.fullname || "User"}</h3>
+            <p>@{user?.username || "admin"}</p>
           </div>
         </div>
       </div>

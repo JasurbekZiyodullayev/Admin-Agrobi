@@ -4,6 +4,7 @@ export const ROUTER = {
   STATISTICS: "statistics",
   GENERAL: "general",
   CREATE: "create",
+  TRADE: "trade",
   PORTAL: "portal-users",
   PORTALS: "portals",
   PROVIDED: "provided",

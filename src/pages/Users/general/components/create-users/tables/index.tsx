@@ -18,7 +18,6 @@ export default function UserTable() {
       select: (res: { data: User[] }) => res?.data,
     }
   );
-  console.log("get", data);
 
   const { mutate, isLoading: deleteLoading } = useMutation(
     (id: string) => deleteRequest(`/auth/profiles/${id}/`),

@@ -4,12 +4,12 @@ import AddUsers from "./components/create-users";
 import { Flex } from "@mantine/core";
 import NotPremission from "@/components/not-permission";
 import { useEffect, useState } from "react";
-export default function TradeUserPage() {
+export default function PortalUserPage() {
   const role = getRole();
   const [open, setOpen] = useState(false);
   useEffect(() => {
     if (role?.directions) {
-      setOpen(role.directions.includes("TRADE"));
+      setOpen(role.directions.includes("PORTAL"));
     } else {
       setOpen(true);
     }
