@@ -1,5 +1,5 @@
 export const endpoints = {
-  login: "auth/token/",
+  login: "auth/admin/token/",
   statUsers: "/auth/profiles/",
 };
 export const URL_KEYS = {

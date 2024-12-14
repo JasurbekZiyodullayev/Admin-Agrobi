@@ -8,7 +8,7 @@ export default function TradeUserPage() {
   const role = getRole();
   const [open, setOpen] = useState(false);
   useEffect(() => {
-    if (role?.user_type === "SUPERADMIN" && role?.directions) {
+    if (role?.directions) {
       setOpen(role.directions.includes("TRADE"));
     } else {
       setOpen(false);
