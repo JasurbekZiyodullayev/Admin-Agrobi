@@ -50,7 +50,7 @@ export default function useHook() {
         : PostInfoApi(endpoints.statUsers, data),
     {
       onSuccess: async () => {
-        await navigate("/users/portal-users");
+        await navigate("/users/trade");
         id
           ? await notifications.show({
               message: "Foydalanuvchi qo'shildi!",
@@ -77,7 +77,7 @@ export default function useHook() {
       ...data,
       user_region: null,
       group: ["stat"],
-      directions: ["PORTAL"],
+      directions: ["TRADE"],
       user_type: "ADMIN",
     };
     delete payload.group2;

@@ -13,7 +13,6 @@ export default function Item({ icon, path = "#", text, child }: ISidebar) {
         <ExitModal icon={icon} text={text} />
       ) : path === "/users" ? (
         <Accordion
-          chevron={false}
           styles={{
             root: { borderRadius: "12px", marginBottom: "16px" },
             item: { border: 0, paddingLeft: "6px" },

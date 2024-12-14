@@ -1,5 +1,4 @@
 import IconExit from "@/assets/exit";
-import IconPortal from "@/assets/sidebar/portal";
 import IconUsers from "@/assets/sidebar/users";
 
 export const SIDEBARDATA = [
@@ -32,12 +31,12 @@ export const SIDEBARDATA = [
     ],
   },
 
-  {
-    id: 1,
-    icon: <IconPortal />,
-    text: "Milliy Portal",
-    path: "/portals",
-  },
+  // {
+  //   id: 1,
+  //   icon: <IconPortal />,
+  //   text: "Milliy Portal",
+  //   path: "/portals",
+  // },
   {
     id: 4,
     icon: <IconExit />,

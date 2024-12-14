@@ -45,7 +45,7 @@ export default function UserTable() {
     <>
       {data
         ?.filter(
-          (el) => el.group.includes("trade") && el.directions.includes("TRADE")
+          (el) => el.group.includes("stat") && el.directions.includes("TRADE")
         )
         .map((item, index: number) => (
           <Table.Tr key={item.id}>
