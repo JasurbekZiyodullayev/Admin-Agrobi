@@ -6,12 +6,12 @@ import { endpoints, URL_KEYS } from "@/shared/endpoints";
 import { deleteRequest } from "@/shared/modules/deleteAllRequest";
 import { GetInfoApi } from "@/shared/modules/getAllRequest";
 import { User } from "@/types/api/stat";
-import { Flex, Table } from "@mantine/core";
+import { Box, Flex, LoadingOverlay, Table } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
 import { useMutation, useQuery } from "@tanstack/react-query";
 
 export default function UserTable() {
-  const { data, refetch } = useQuery(
+  const { data, refetch, isFetching } = useQuery(
     [URL_KEYS.GET_STAT_USERS],
     () => GetInfoApi(endpoints.statUsers),
     {
@@ -26,6 +26,13 @@ export default function UserTable() {
         refetch();
         notifications.show({
           message: "O'chirildi",
+        });
+      },
+      onError: (error: any) => {
+        notifications.show({
+          title: "Xatolik",
+          message: `${error?.response?.data?.detail || error?.status}`,
+          color: "red",
         });
       },
     }
@@ -105,5 +112,14 @@ export default function UserTable() {
         ))}
     </>
   );
-  return <TableComponent thead={thead} rows={rows} />;
+  return (
+    <Box pos="relative">
+      <LoadingOverlay
+        visible={isFetching || deleteLoading}
+        zIndex={1000}
+        overlayProps={{ radius: "sm", blur: 2 }}
+      />
+      <TableComponent thead={thead} rows={rows} />
+    </Box>
+  );
 }

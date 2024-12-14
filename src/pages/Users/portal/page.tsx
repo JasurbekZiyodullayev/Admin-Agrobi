@@ -8,7 +8,7 @@ export default function PortalUserPage() {
   const role = getRole();
   const [open, setOpen] = useState(false);
   useEffect(() => {
-    if (role?.directions && role?.group === "stat-checker") {
+    if (role?.directions) {
       setOpen(role.directions.includes("PORTAL"));
     } else {
       setOpen(false);

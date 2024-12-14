@@ -16,11 +16,18 @@ export const RegisteredRouters = [
         // index: true,
         path: ROUTER.USERS,
         // element: <GeneralUserPage />,
-
         children: [
           {
             index: true,
             element: <GeneralUserPage />,
+          },
+          {
+            path: ROUTER.CREATE,
+            element: <CreateUsersGeneral />,
+          },
+          {
+            path: ROUTER.EDIT,
+            element: <CreateUsersGeneral />,
           },
           {
             path: ROUTER.STATISTICS,

@@ -4,14 +4,14 @@ import { endpoints, URL_KEYS } from "@/shared/endpoints";
 import { deleteRequest } from "@/shared/modules/deleteAllRequest";
 import { GetInfoApi } from "@/shared/modules/getAllRequest";
 import { User } from "@/types/api/stat";
-import { Table } from "@mantine/core";
+import { Box, LoadingOverlay, Table } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
 import { useMutation, useQuery } from "@tanstack/react-query";
 
 export default function UserTable() {
-  const { data, refetch } = useQuery(
+  const { data, refetch, isFetching } = useQuery(
     [URL_KEYS.GET_STAT_USERS],
-    () => GetInfoApi(endpoints.statUsers),
+    () => GetInfoApi(endpoints.statUsers + "?direction=TRADE"),
     {
       select: (res: { data: User[] }) => res?.data,
     }
@@ -24,6 +24,13 @@ export default function UserTable() {
         refetch();
         notifications.show({
           message: "O'chirildi",
+        });
+      },
+      onError: (error: any) => {
+        notifications.show({
+          title: "Xatolik",
+          message: `${error?.response?.data?.detail || error?.status}`,
+          color: "red",
         });
       },
     }
@@ -43,28 +50,33 @@ export default function UserTable() {
 
   const rows = (
     <>
-      {data
-        ?.filter(
-          (el) => el.group.includes("stat") && el.directions.includes("TRADE")
-        )
-        .map((item, index: number) => (
-          <Table.Tr key={item.id}>
-            <Table.Td>{index + 1}</Table.Td>
-            <Table.Td>{item.first_name}</Table.Td>
-            <Table.Td>{item.last_name}</Table.Td>
-            <Table.Td>{item.username}</Table.Td>
-            <Table.Td>{item.occupation}</Table.Td>
-            <Table.Td>{item.phone_number}</Table.Td>
-            <Table.Td>
-              <EditDeleteButton
-                id={item.id}
-                isloading={deleteLoading}
-                mutate={mutate}
-              />
-            </Table.Td>
-          </Table.Tr>
-        ))}
+      {data?.map((item, index: number) => (
+        <Table.Tr key={item.id}>
+          <Table.Td>{index + 1}</Table.Td>
+          <Table.Td>{item.first_name}</Table.Td>
+          <Table.Td>{item.last_name}</Table.Td>
+          <Table.Td>{item.username}</Table.Td>
+          <Table.Td>{item.occupation}</Table.Td>
+          <Table.Td>{item.phone_number}</Table.Td>
+          <Table.Td>
+            <EditDeleteButton
+              id={item.id}
+              isloading={deleteLoading}
+              mutate={mutate}
+            />
+          </Table.Td>
+        </Table.Tr>
+      ))}
     </>
   );
-  return <TableComponent thead={thead} rows={rows} />;
+  return (
+    <Box pos="relative">
+      <LoadingOverlay
+        visible={isFetching}
+        zIndex={1000}
+        overlayProps={{ radius: "sm", blur: 2 }}
+      />
+      <TableComponent thead={thead} rows={rows} />
+    </Box>
+  );
 }

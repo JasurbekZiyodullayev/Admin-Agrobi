@@ -62,10 +62,9 @@ export default function useHook() {
             });
       },
       onError: (error: any) => {
-        console.log("error", error);
         notifications.show({
           title: "Xatolik",
-          message: "Qaysidir ma'lumot xato kiritildi!",
+          message: `${error?.response?.data?.detail || error?.status}`,
           color: "red",
         });
       },
