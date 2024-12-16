@@ -40,10 +40,9 @@ export const useLogin = () => {
         });
       },
       onError: (error: any) => {
-        console.log("error", error);
         notifications.show({
           title: "Xatolik",
-          message: "Ushbu login yoki parol topilmadi, qayta tekshirib ko'ring",
+          message: `${error?.response?.data?.detail || error?.status}`,
           color: "red",
         });
       },
