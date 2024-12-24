@@ -1,0 +1,57 @@
+.wrapper label {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-base-primary);
+  margin-bottom: 8px;
+}
+.wrapper input {
+  font-size: 14px;
+  width: 100%;
+  height: 40px;
+  border-radius: 12px;
+  outline: none;
+  text-indent: 12px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  border: 1px solid #C8CAD0;
+  margin-bottom: 5px;
+  transition: all 0.17s ease-in-out;
+}
+.wrapper input:focus {
+  border-color: #228be6;
+}
+.wrapper input::-moz-placeholder {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8e8e93;
+}
+.wrapper input::placeholder {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8e8e93;
+}
+.wrapper input.error {
+  color: #fa5252;
+  border: 0.795144px solid #fa5252;
+}
+.wrapper input.error::-moz-placeholder {
+  color: #fa5252;
+}
+.wrapper input.error::placeholder {
+  color: #fa5252;
+}
+.wrapper .error {
+  color: #fa5252;
+  font-size: 12px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+}/*# sourceMappingURL=style.module.css.map */

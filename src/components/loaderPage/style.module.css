@@ -1,0 +1,40 @@
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.wrapper .left {
+  width: 252px;
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.wrapper .right {
+  width: calc(100vw - 252px);
+  height: 100%;
+}
+.wrapper .right .header {
+  height: 68px;
+  padding: 12px 24px;
+  width: 100%;
+}
+.wrapper .right .main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  padding: 24px;
+  height: calc(100vh - 208px);
+}
+.wrapper .right .main .center {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.wrapper .right .footer {
+  width: 100%;
+  height: 140px;
+  padding: 24px;
+}/*# sourceMappingURL=style.module.css.map */

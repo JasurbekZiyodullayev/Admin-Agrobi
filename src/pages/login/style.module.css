@@ -1,0 +1,70 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+}
+.wrapper .left {
+  width: calc(100% - 500px);
+  overflow: hidden;
+  background-image: url("../../assets/login.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (max-width: 991px) {
+  .wrapper .left {
+    display: none;
+  }
+}
+.wrapper .left img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wrapper .right {
+  width: 500px;
+  height: 100vh;
+  padding: 48px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 991px) {
+  .wrapper .right {
+    width: 100%;
+  }
+}
+.wrapper .right .loginIcon {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.35rem;
+}
+.wrapper .right .loginIcon span {
+  color: var(--grey-600);
+  font-size: 3.69538rem;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.07394rem;
+}
+.wrapper .right .loginIcon svg {
+  width: 80px;
+  height: 80px;
+}
+.wrapper .right .form {
+  width: 100%;
+  padding: 0 90px;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 991px) {
+  .wrapper .right .form {
+    padding: 0 20px;
+  }
+}
+.wrapper .right .form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}/*# sourceMappingURL=style.module.css.map */

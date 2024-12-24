@@ -1,0 +1,20 @@
+.wrapper {
+  width: 100%;
+  height: 90%;
+  background-image: url("../../assets/not-prem.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 40%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.wrapper .curtain {
+  width: 100%;
+  height: 100%;
+  background-color: var(--site-bg2);
+}
+.wrapper .curtain h4 {
+  font-size: 22px;
+  color: var(--grey-600);
+}/*# sourceMappingURL=style.module.css.map */
