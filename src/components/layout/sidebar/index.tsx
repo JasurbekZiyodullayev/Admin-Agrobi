@@ -1,4 +1,3 @@
-import IconDigital from "@/assets/digital";
 import LoginIconMini from "@/assets/loginIconMini";
 import CallCenterComponent from "@/components/callcenter";
 import { SIDEBARDATA } from "@/constants/sidebar";
@@ -6,6 +5,7 @@ import { ISidebar } from "@/types/layout";
 import { Burger, ScrollArea } from "@mantine/core";
 import Item from "./components/item";
 import styles from "./sidebar.module.scss";
+import IconLogoDigitagro from "@/assets/logo-digitagro";
 
 export default function Sidebar({
   show,
@@ -37,7 +37,7 @@ export default function Sidebar({
 
       <div className={styles.callcenter}>
         <CallCenterComponent />
-        <IconDigital />
+        <IconLogoDigitagro />
       </div>
     </div>
   );
