@@ -1,4 +1,3 @@
-// import { Flex } from "@mantine/core";
 import { Flex } from "@mantine/core";
 import styled from "../style.module.scss";
 import AddUsers from "./components/create-users";

@@ -92,6 +92,14 @@ export default function UserTable() {
                     <IconUncheck />
                   )}
                 </Flex>
+                <Flex justify="space-between" align="center">
+                  <p style={{ fontSize: "13px" }}>EK va IM kursatkichlari</p>{" "}
+                  {item.directions.includes("TRADE_CUSTOM") ? (
+                    <IconCheck />
+                  ) : (
+                    <IconUncheck />
+                  )}
+                </Flex>
               </Flex>
             </Table.Td>
             <Table.Td>

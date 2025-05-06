@@ -41,6 +41,10 @@ const direction: ISelectProp[] = [
     value: "PORTAL",
     label: "Milliy portal",
   },
+  {
+    value: "TRADE_CUSTOM",
+    label: "EK va IM kursatkichlari",
+  },
 ];
 
 export default function CreateUsersGeneral() {
