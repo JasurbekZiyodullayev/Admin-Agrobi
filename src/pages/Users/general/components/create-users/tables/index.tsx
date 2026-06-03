@@ -16,7 +16,7 @@ export default function UserTable() {
     () => GetInfoApi(endpoints.statUsers),
     {
       select: (res: { data: User[] }) => res?.data,
-    }
+    },
   );
 
   const { mutate, isLoading: deleteLoading } = useMutation(
@@ -35,7 +35,7 @@ export default function UserTable() {
           color: "red",
         });
       },
-    }
+    },
   );
 
   const thead = (
@@ -70,7 +70,7 @@ export default function UserTable() {
               <Flex direction="column" gap="4px">
                 <Flex justify="space-between" align="center">
                   <p style={{ fontSize: "13px" }}>Statistika</p>{" "}
-                  {item.directions.includes("STAT") ? (
+                  {item?.directions?.includes("STAT") ? (
                     <IconCheck />
                   ) : (
                     <IconUncheck />
@@ -78,7 +78,7 @@ export default function UserTable() {
                 </Flex>
                 <Flex justify="space-between" align="center">
                   <p style={{ fontSize: "13px" }}>Milliy portal</p>{" "}
-                  {item.directions.includes("PORTAL") ? (
+                  {item?.directions?.includes("PORTAL") ? (
                     <IconCheck />
                   ) : (
                     <IconUncheck />
@@ -86,7 +86,7 @@ export default function UserTable() {
                 </Flex>
                 <Flex justify="space-between" align="center">
                   <p style={{ fontSize: "13px" }}>Bojxona</p>{" "}
-                  {item.directions.includes("TRADE") ? (
+                  {item?.directions?.includes("TRADE") ? (
                     <IconCheck />
                   ) : (
                     <IconUncheck />
@@ -94,7 +94,7 @@ export default function UserTable() {
                 </Flex>
                 <Flex justify="space-between" align="center">
                   <p style={{ fontSize: "13px" }}>EK va IM kursatkichlari</p>{" "}
-                  {item.directions.includes("TRADE_CUSTOM") ? (
+                  {item?.directions?.includes("TRADE_CUSTOM") ? (
                     <IconCheck />
                   ) : (
                     <IconUncheck />
@@ -106,8 +106,8 @@ export default function UserTable() {
               {item.group.includes("stat")
                 ? "To'ldiruvchi"
                 : item.group.includes("stat-read")
-                ? "Kuzatuvchi"
-                : "Tekshiruvchi"}
+                  ? "Kuzatuvchi"
+                  : "Tekshiruvchi"}
             </Table.Td>
             <Table.Td>
               <EditDeleteButton
